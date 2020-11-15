@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>正则表达式 | Wu Hao's Blog</title><meta name="keywords" content="RegExp"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、转义字符 \用于字符串中 换行 ：\n 缩进：\t 引号：\&#39; \&quot; \：\\ 多行字符串：  var str &#x3D; &quot;&lt;div&gt;\&lt;p&gt;&lt;&#x2F;p&gt;\&lt;span&gt;&lt;&#x2F;span&gt;\&lt;&#x2F;div&gt;&quot;  正则中不用转义字符的符号 空格  -  :  &lt;  &gt;  二、i,g,m sour">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://example.com/2020/09/21/ES5-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Wu Hao&#39;s Blog">
+<meta property="og:description" content="一、转义字符 \用于字符串中 换行 ：\n 缩进：\t 引号：\&#39; \&quot; \：\\ 多行字符串：  var str &#x3D; &quot;&lt;div&gt;\&lt;p&gt;&lt;&#x2F;p&gt;\&lt;span&gt;&lt;&#x2F;span&gt;\&lt;&#x2F;div&gt;&quot;  正则中不用转义字符的符号 空格  -  :  &lt;  &gt;  二、i,g,m sour">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557">
+<meta property="article:published_time" content="2020-09-21T09:35:45.000Z">
+<meta property="article:modified_time" content="2020-11-15T01:11:41.842Z">
+<meta property="article:author" content="Wu Hao">
+<meta property="article:tag" content="RegExp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2020/09/21/ES5-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wu Hao","link":"链接: ","source":"来源: Wu Hao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isSidebar: true,
+  postUpdate: '2020-11-15 09:11:41'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">144</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">137</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">一、转义字符 \</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD"><span class="toc-number">1.1.</span> <span class="toc-text">用于字符串中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E4%B8%AD%E4%B8%8D%E7%94%A8%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.2.</span> <span class="toc-text">正则中不用转义字符的符号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81i-g-m"><span class="toc-number">2.</span> <span class="toc-text">二、i,g,m</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%80%E5%A4%B4%E7%BB%93%E5%B0%BE"><span class="toc-number">3.</span> <span class="toc-text">三、正则表达式开头结尾 ^ $</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E5%AD%90%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">四、表达式与子表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.1.</span> <span class="toc-text">表达式 []</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">4.2.</span> <span class="toc-text">子表达式 ()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E5%AD%90%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%9E%E7%94%A8-%E5%A6%82%EF%BC%9A-A-B-g"><span class="toc-number">4.3.</span> <span class="toc-text">表达式与子表达式连用,如：&#x2F;(A|B)[]&#x2F;g</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E5%8F%8D%E5%90%91%E5%BC%95%E7%94%A8"><span class="toc-number">4.4.</span> <span class="toc-text">子表达式与反向引用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%85%83%E5%AD%97%E7%AC%A6"><span class="toc-number">5.</span> <span class="toc-text">五、元字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E9%87%8F%E8%AF%8D"><span class="toc-number">6.</span> <span class="toc-text">六、量词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%AD%A3%E5%88%99%E6%96%B9%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">七、正则方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E6%94%AF%E6%8C%81%E6%AD%A3%E5%88%99%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">八、支持正则的字符串方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E6%AD%A3%E5%90%91%E9%A2%84%E6%A3%80-%E6%AD%A3%E5%90%91%E6%96%AD%E8%A8%80"><span class="toc-number">9.</span> <span class="toc-text">九、正向预检(正向断言)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E9%9D%9E%E8%B4%AA%E5%A9%AA%E5%8C%B9%E9%85%8D"><span class="toc-number">10.</span> <span class="toc-text">十、非贪婪匹配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E4%B9%A0%E9%A2%98"><span class="toc-number">11.</span> <span class="toc-text">十一、习题</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">正则表达式</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-21T09:35:45.000Z" title="发表于 2020-09-21 17:35:45">2020-09-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-15T01:11:41.842Z" title="更新于 2020-11-15 09:11:41">2020-11-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ES5/">ES5</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、转义字符"><a href="#一、转义字符" class="headerlink" title="一、转义字符 \"></a>一、转义字符 <code>\</code></h2><h3 id="用于字符串中"><a href="#用于字符串中" class="headerlink" title="用于字符串中"></a>用于字符串中</h3><ol>
+<li>换行 ：\n</li>
+<li>缩进：\t</li>
+<li>引号：<code>\&#39; \&quot;</code></li>
+<li>\：<code>\\</code></li>
+<li>多行字符串：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;&lt;div&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;span&gt;&lt;/span&gt;\</span></span><br><span class="line"><span class="string">&lt;/div&gt;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="正则中不用转义字符的符号"><a href="#正则中不用转义字符的符号" class="headerlink" title="正则中不用转义字符的符号"></a>正则中不用转义字符的符号</h3><ol>
+<li>空格  -  :  &lt;  &gt;</li>
+</ol>
+<h2 id="二、i-g-m"><a href="#二、i-g-m" class="headerlink" title="二、i,g,m"></a>二、i,g,m</h2><blockquote>
+<p>source：表示正则表达式内容</p>
+</blockquote>
+<ol>
+<li>i:忽略大小写进行匹配</li>
+<li>g:将字符串中所有符合条件的片段找出来,如果不加,那么找到一个片段就停止查找</li>
+<li>m:多行匹配</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;abab\nab&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a/gm</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg)); </span><br></pre></td></tr></table></figure>
+<p><img src="m.png" alt="控制台输出"></p>
+<h2 id="三、正则表达式开头结尾"><a href="#三、正则表达式开头结尾" class="headerlink" title="三、正则表达式开头结尾 ^ $"></a>三、正则表达式开头结尾 ^ $</h2><ol>
+<li>如果^ $同时出现，那么匹配的范围固定，为整个字符串长度</li>
+</ol>
+<h2 id="四、表达式与子表达式"><a href="#四、表达式与子表达式" class="headerlink" title="四、表达式与子表达式"></a>四、表达式与子表达式</h2><h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式 []"></a>表达式 []</h3><ol>
+<li>RegExp中一个[]对应一位符号，内部是该位符号的取值范围</li>
+<li>[^…]表示非…</li>
+</ol>
+<h3 id="子表达式"><a href="#子表达式" class="headerlink" title="子表达式 ()"></a>子表达式 ()</h3><ol>
+<li>(A|B):匹配片段A或B</li>
+</ol>
+<h3 id="表达式与子表达式连用-如：-A-B-g"><a href="#表达式与子表达式连用-如：-A-B-g" class="headerlink" title="表达式与子表达式连用,如：/(A|B)[]/g"></a>表达式与子表达式连用,如：/(A|B)[]/g</h3><h3 id="子表达式与反向引用"><a href="#子表达式与反向引用" class="headerlink" title="子表达式与反向引用"></a>子表达式与反向引用</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将字符串&quot;aaabbbb&quot; 转换成&quot;aabb&quot;</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;aaabbbb&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w)\1(\w)\2/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
+<ol>
+<li>\1:表示反向引用第一个子表达式里面的内容</li>
+<li>\2:表示反向引用第二个子表达式里面的内容</li>
+<li>就相当于将子表达式里面的内容copy一份</li>
+</ol>
+<h2 id="五、元字符"><a href="#五、元字符" class="headerlink" title="五、元字符"></a>五、元字符</h2><ol>
+<li>\w \W:   <strong>[0-9A-z]</strong>   [^\w]</li>
+<li>\d \D:   <strong>[0-9]</strong>      [^\d]</li>
+<li>\s \S:   <strong>空白字符</strong>    [^\s]</li>
+<li>\b \B:   <strong>单词边界</strong>    [^\b]</li>
+<li>\t \n:   <strong>制表符</strong>      换行符(匹配非视觉上的 如：str=’aa\nb’)</li>
+</ol>
+<h2 id="六、量词"><a href="#六、量词" class="headerlink" title="六、量词"></a>六、量词</h2><blockquote>
+<p>量词：一个人中一个是量词，RegExp中表示要匹配的字符个数<br>贪婪匹配原则：尽可能多的匹配，能匹配四个字符就不匹配三个</p>
+</blockquote>
+<ol>
+<li><strong>+:</strong>   1-infinity</li>
+<li><strong>*:</strong>   0-infinity</li>
+<li><strong>?:</strong>   0-1</li>
+<li><strong>{X}:</strong>   匹配X个</li>
+<li><strong>{X,Y}:</strong>   最少匹配X个，最多匹配Y个</li>
+<li><strong>{X, }:</strong>   最少匹配X个</li>
+</ol>
+<h2 id="七、正则方法"><a href="#七、正则方法" class="headerlink" title="七、正则方法"></a>七、正则方法</h2><ol>
+<li><p><strong>reg.test(str):</strong> 返回值true false,只能判断字符串里是否有正则片段</p>
+</li>
+<li><p><strong>reg.exec(str):</strong> 根据游标lastIndex位置向后匹配</p>
+</li>
+</ol>
+<ul>
+<li>手动修改游标位置不会影响函数正常功能</li>
+<li>reg不加g，lastIndex始终为0</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;ababababababab&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/ab/g</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="exec.png" alt="控制台输出"></p>
+<h2 id="八、支持正则的字符串方法"><a href="#八、支持正则的字符串方法" class="headerlink" title="八、支持正则的字符串方法"></a>八、支持正则的字符串方法</h2><ol>
+<li><strong>str.match(reg):</strong> 返回匹配到的片段</li>
+<li><strong>str.search(reg):</strong> 返回匹配到的内容的位置</li>
+<li><strong>str.split(reg):</strong> 按正则表达式将字符串拆分，如果正则中有子表达式，返回的数组中也会带有子表达式</li>
+<li><strong>str.replace(reg):</strong> </li>
+</ol>
+<ul>
+<li>非正则替换没有访问全局的能力</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;aaabbbbcccddd&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.replace(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;M&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p><img src="!.png" alt="控制台输出"></p>
+<ul>
+<li>正则表达式替换</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;aa&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.replace(reg,<span class="string">&#x27;M&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p><img src="r.png" alt="控制台输出"></p>
+<ul>
+<li>参数2可以使用反向引用</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将aabb转换成bbaa</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;aabb&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w)\1(\w)\2/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.replace(reg,<span class="string">&#x27;$2$2$1$1&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p><img src="$.png" alt="控制台输出"></p>
+<ul>
+<li>参数2可以是函数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//将aabb转换成bbaa</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;aabb&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w)\1(\w)\2/g</span>;</span><br><span class="line"><span class="comment">//$:reg匹配到的内容</span></span><br><span class="line"><span class="comment">//$1,$2:子表达式1,子表达式2</span></span><br><span class="line"><span class="comment">//参数2中return $字符，需要转义字符$$</span></span><br><span class="line"><span class="built_in">console</span>.log(str.replace(reg,<span class="function"><span class="keyword">function</span>(<span class="params">$,$<span class="number">1</span>,$<span class="number">2</span></span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log($);</span><br><span class="line"><span class="keyword">return</span> $<span class="number">2</span>+$<span class="number">2</span>+$<span class="number">1</span>+$<span class="number">1</span>;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<p><img src="f.png" alt="控制台输出"></p>
+<h2 id="九、正向预检-正向断言"><a href="#九、正向预检-正向断言" class="headerlink" title="九、正向预检(正向断言)"></a>九、正向预检(正向断言)</h2><blockquote>
+<p>选有限制条件的内容，例，选择一个头铁的学生，限制条件：头铁，选择对象：学生</p>
+</blockquote>
+<ol>
+<li>肯定条件：(?=b)</li>
+<li>否定条件：(?!b)</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;abaaaaaacab&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a(?=b)/g</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a(?!b)/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
+<p><img src="%EF%BC%9F=.png" alt="控制台输出"><br><img src="%EF%BC%9F%EF%BC%81.png" alt="控制台输出"></p>
+<h2 id="十、非贪婪匹配"><a href="#十、非贪婪匹配" class="headerlink" title="十、非贪婪匹配"></a>十、非贪婪匹配</h2><blockquote>
+<p>非贪婪匹配原则：能少匹配绝对不多匹配<br>开启方式：加问好 ?</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 贪婪匹配</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;acaab&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a+/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
+<p><img src="tan.png" alt="控制台输出"></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 非贪婪匹配</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;acaab&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a+?/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
+<p><img src="feitan.png" alt="控制台输出"></p>
+<h2 id="十一、习题"><a href="#十一、习题" class="headerlink" title="十一、习题"></a>十一、习题</h2><blockquote>
+<p>空格在RegExp里面直接打空格，没有转义字符</p>
+</blockquote>
+<ol>
+<li>正则表达式/a??/g中两个问号分别是什么意思?</li>
+</ol>
+<ul>
+<li>第一个是量词：每次匹配0-1个a</li>
+<li>第二个是贪婪匹配</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;ac&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a??/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
+<p><img src="double%EF%BC%9F.png" alt="控制台输出"></p>
+<ol start="2">
+<li>字符串去重:”aaaaaabbbbccc”</li>
+</ol>
+<ul>
+<li>字符串去重问题本质上是<strong>替换</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;aaaaaabbbbccc&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w)\1*/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.replace(reg,<span class="string">&#x27;$1&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p><img src="quchong.png" alt="控制台输出"></p>
+<ol start="3">
+<li>给字符串”100000000”每三位添加一个’.’，输出100.000.000</li>
+</ol>
+<ul>
+<li>该题本质上是用’.’替换空</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;100000000&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?=(\B)(\d&#123;3&#125;)+$)/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.replace(reg,<span class="string">&#x27;.&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<p><img src="harder.png" alt="控制台输出"></p>
+<ol start="4">
+<li>将the-first-name转化成theFirstName</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;the-first-name&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/-(\w)/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.replace(reg,<span class="function"><span class="keyword">function</span>(<span class="params">$,$<span class="number">1</span></span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> $<span class="number">1.</span>toUpperCase();</span><br><span class="line">&#125;));</span><br><span class="line"><span class="built_in">console</span>.log(str.match(reg));</span><br></pre></td></tr></table></figure>
+
+<p><img src="upper.png" alt="控制台输出"></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:303459939@qq.com">Wu Hao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/09/21/ES5-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">http://example.com/2020/09/21/ES5-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Wu Hao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/RegExp/">RegExp</a></div><div class="post_share"><div class="social-share" data-image="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/09/21/ES5-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/"><img class="prev-cover" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ES5字符串方法</div></div></a></div><div class="next-post pull-right"><a href="/2020/09/21/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JS/"><img class="next-cover" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1620187072,684754480&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">你不知道的JS</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>浮动 | Wu Hao's Blog</title><meta name="keywords" content="浮动"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、典型应用场景 文字环绕  横向排列   二、浮动的基本特点 属性值   left：左浮动，元素靠上考右排列  right：右浮动，元素靠上靠右排列  默认值：none，即常规流    当一个元素浮动后，元素必定为块盒   自动更改display属性为block   浮动元素的包含块，和常规流一样，为父元素内容盒  三、盒子尺寸 宽度是auto时，适用内容宽度  高度为auto时，适应内容高度">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>浮动 | Wu Hao's Blog</title><meta name="keywords" content="浮动"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、典型应用场景 文字环绕  横向排列   二、浮动的基本特点 属性值   left：左浮动，元素靠上考右排列  right：右浮动，元素靠上靠右排列  默认值：none，即常规流    当一个元素浮动后，元素必定为块盒   自动更改display属性为block   和常规流一样，浮动元素的包含块，为父元素内容盒  三、盒子尺寸3.1 auto 宽高auto时，适用内容宽度  margin为au">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浮动">
 <meta property="og:url" content="http://example.com/2020/11/12/CSS2-%E6%B5%AE%E5%8A%A8/index.html">
 <meta property="og:site_name" content="Wu Hao&#39;s Blog">
-<meta property="og:description" content="一、典型应用场景 文字环绕  横向排列   二、浮动的基本特点 属性值   left：左浮动，元素靠上考右排列  right：右浮动，元素靠上靠右排列  默认值：none，即常规流    当一个元素浮动后，元素必定为块盒   自动更改display属性为block   浮动元素的包含块，和常规流一样，为父元素内容盒  三、盒子尺寸 宽度是auto时，适用内容宽度  高度为auto时，适应内容高度">
+<meta property="og:description" content="一、典型应用场景 文字环绕  横向排列   二、浮动的基本特点 属性值   left：左浮动，元素靠上考右排列  right：右浮动，元素靠上靠右排列  默认值：none，即常规流    当一个元素浮动后，元素必定为块盒   自动更改display属性为block   和常规流一样，浮动元素的包含块，为父元素内容盒  三、盒子尺寸3.1 auto 宽高auto时，适用内容宽度  margin为au">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blogdoneozinho.com.br/wp-content/uploads/2017/06/css.png">
 <meta property="article:published_time" content="2020-11-12T08:35:15.000Z">
-<meta property="article:modified_time" content="2020-11-13T16:10:53.822Z">
+<meta property="article:modified_time" content="2020-11-16T04:56:19.699Z">
 <meta property="article:author" content="Wu Hao">
 <meta property="article:tag" content="浮动">
 <meta name="twitter:card" content="summary">
@@ -80,7 +80,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: true,
   isSidebar: true,
-  postUpdate: '2020-11-14 00:10:53'
+  postUpdate: '2020-11-16 12:56:19'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,7 +142,7 @@ var saveToLocal = {
     if (t === 'dark') activateDarkMode()
     else if (t === 'light') activateLightMode()
   }
-})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">149</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">143</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">一、典型应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">二、浮动的基本特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%9B%92%E5%AD%90%E5%B0%BA%E5%AF%B8"><span class="toc-number">3.</span> <span class="toc-text">三、盒子尺寸</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%9B%92%E5%AD%90%E6%8E%92%E5%88%97"><span class="toc-number">4.</span> <span class="toc-text">四、盒子排列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%AB%98%E5%BA%A6%E5%9D%8D%E5%A1%8C"><span class="toc-number">5.</span> <span class="toc-text">五、高度坍塌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%B5%AE%E5%8A%A8%E7%9A%84%E7%BB%86%E8%8A%82%E8%A7%84%E5%88%99"><span class="toc-number">6.</span> <span class="toc-text">六、浮动的细节规则</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://blogdoneozinho.com.br/wp-content/uploads/2017/06/css.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">浮动</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-12T08:35:15.000Z" title="发表于 2020-11-12 16:35:15">2020-11-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-13T16:10:53.822Z" title="更新于 2020-11-14 00:10:53">2020-11-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CSS2/">CSS2</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、典型应用场景"><a href="#一、典型应用场景" class="headerlink" title="一、典型应用场景"></a>一、典型应用场景</h2><ol>
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">158</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">152</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">一、典型应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B5%AE%E5%8A%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">二、浮动的基本特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%9B%92%E5%AD%90%E5%B0%BA%E5%AF%B8"><span class="toc-number">3.</span> <span class="toc-text">三、盒子尺寸</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-auto"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 auto</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E7%99%BE%E5%88%86%E6%AF%94"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 百分比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%B8%B8%E8%A7%84%E6%B5%81%E8%A1%8C%E7%9B%92%E3%80%81%E5%B8%B8%E8%A7%84%E6%B5%81%E5%9D%97%E7%9B%92%E3%80%81%E6%B5%AE%E5%8A%A8%E7%9B%92%E5%AD%90%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">4.</span> <span class="toc-text">四、常规流行盒、常规流块盒、浮动盒子的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E9%AB%98%E5%BA%A6%E5%9D%8D%E5%A1%8C"><span class="toc-number">5.</span> <span class="toc-text">五、高度坍塌</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%B5%AE%E5%8A%A8%E7%9A%84%E7%BB%86%E8%8A%82%E8%A7%84%E5%88%99"><span class="toc-number">6.</span> <span class="toc-text">六、浮动的细节规则</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://blogdoneozinho.com.br/wp-content/uploads/2017/06/css.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">浮动</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-12T08:35:15.000Z" title="发表于 2020-11-12 16:35:15">2020-11-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-16T04:56:19.699Z" title="更新于 2020-11-16 12:56:19">2020-11-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CSS2/">CSS2</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、典型应用场景"><a href="#一、典型应用场景" class="headerlink" title="一、典型应用场景"></a>一、典型应用场景</h2><ol>
 <li><p>文字环绕</p>
 </li>
 <li><p>横向排列</p>
@@ -160,41 +160,32 @@ var saveToLocal = {
 </li>
 </ul>
 <ol start="2">
-<li>当一个元素浮动后，元素<strong>必定为块盒</strong></li>
+<li><strong>当一个元素浮动后，元素必定为块盒</strong></li>
 </ol>
 <ul>
 <li>自动更改display属性为block</li>
 </ul>
 <ol start="2">
-<li>浮动元素的<strong>包含块</strong>，和常规流一样，为父元素<strong>内容盒</strong></li>
+<li><strong>和常规流一样，浮动元素的包含块，为父元素内容盒</strong></li>
 </ol>
-<h2 id="三、盒子尺寸"><a href="#三、盒子尺寸" class="headerlink" title="三、盒子尺寸"></a>三、盒子尺寸</h2><ol>
-<li><p>宽度是auto时，适用内容宽度</p>
-</li>
-<li><p>高度为auto时，适应内容高度</p>
+<h2 id="三、盒子尺寸"><a href="#三、盒子尺寸" class="headerlink" title="三、盒子尺寸"></a>三、盒子尺寸</h2><h3 id="3-1-auto"><a href="#3-1-auto" class="headerlink" title="3.1 auto"></a>3.1 auto</h3><ol>
+<li><p>宽高auto时，适用内容宽度</p>
 </li>
 <li><p>margin为auto时，为0</p>
 </li>
+</ol>
+<h3 id="3-2-百分比"><a href="#3-2-百分比" class="headerlink" title="3.2 百分比"></a>3.2 百分比</h3><ol>
 <li><p>除高度的百分比设置，是相对于包含块的宽度</p>
 </li>
 <li><p>高度的百分比也和常规流一样</p>
 </li>
 </ol>
-<h2 id="四、盒子排列"><a href="#四、盒子排列" class="headerlink" title="四、盒子排列"></a>四、盒子排列</h2><ol>
-<li><p>左浮动的盒子靠上靠左排列，右浮动的盒子靠上靠右排列</p>
-</li>
-<li><p>块盒：排列时无视浮动盒子</p>
+<h2 id="四、常规流行盒、常规流块盒、浮动盒子的关系"><a href="#四、常规流行盒、常规流块盒、浮动盒子的关系" class="headerlink" title="四、常规流行盒、常规流块盒、浮动盒子的关系"></a>四、常规流行盒、常规流块盒、浮动盒子的关系</h2><ol>
+<li><p>块盒：排列时无视浮动盒子，浮动盒子排列时，会避开常规流块盒</p>
 </li>
 <li><p>行盒：排列时会避开浮动盒子</p>
 </li>
-</ol>
-<ul>
-<li>如果文字没有在行盒中，浏览器会自动生成一个行盒包裹文字，该行盒叫做匿名行盒</li>
-</ul>
-<ol start="4">
-<li><p>浮动盒子在包含块中排列时，会避开常规流块盒</p>
-</li>
-<li><p>外边距和并不会发生</p>
+<li><p>不会发生外边距和并</p>
 </li>
 </ol>
 <h2 id="五、高度坍塌"><a href="#五、高度坍塌" class="headerlink" title="五、高度坍塌"></a>五、高度坍塌</h2><ol>
@@ -215,6 +206,8 @@ var saveToLocal = {
 <li><p>both：清楚左右浮动下方，该元素必须出现在所有浮动盒子的下方</p>
 </li>
 </ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">.clearFix::after&#123;</span><br><span class="line">    content:<span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    display:block;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="六、浮动的细节规则"><a href="#六、浮动的细节规则" class="headerlink" title="六、浮动的细节规则"></a>六、浮动的细节规则</h2><ol>
 <li><p>左浮动的盒子向上向左排列</p>
 </li>

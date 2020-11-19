@@ -1,0 +1,230 @@
+<h1 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h1><h2 id="何为事件"><a href="#何为事件" class="headerlink" title="何为事件"></a>何为事件</h2><ol>
+<li><p>说白了就是一个动作，与用户实现交互功能，你动一下，他会给你一个反馈</p>
+<p> <code>div.onclick = function(){}</code></p>
+<p> div.onclick就是一个事件，后面的函数是响应</p>
+</li>
+<li><p>重要吗？ — 交互体验的核心功能</p>
+</li>
+</ol>
+<h2 id="如何绑定事件"><a href="#如何绑定事件" class="headerlink" title="如何绑定事件"></a>如何绑定事件</h2><ol>
+<li><p>ele.onxxx = function (event) {}</p>
+<ul>
+<li><p>兼容性很好，但是一个元素只能绑定一个处理程序</p>
+</li>
+<li><p>基本等同于写在HTML行间上(onclick作为属性写在内联样式表里，，这种绑定方式叫做<strong>句柄</strong>的绑定方式)</p>
+</li>
+</ul>
+</li>
+<li><p>ele.addEventListener(type, fn, false);</p>
+<ul>
+<li><p>IE9以下不兼容，可以为一个事件绑定多个处理程序，触发之后会按照绑定顺序依次触发<br>  <img src="2020-03-19-09-24-50.png" alt="例"></p>
+</li>
+<li><p>如果同一个函数绑定多次，那么只执行一次<br>  <img src="2020-03-19-09-27-08.png" alt="例"><br>  这两个函数长得一样，但是位置不同，所以输出a a</p>
+<p>  <img src="2020-03-19-09-27-26.png" alt="例"><br>  同一个函数，绑定多次，只执行一次，输出a</p>
+</li>
+<li><p>type：事件类型，点击样式直接写click</p>
+</li>
+<li><p>fn：处理函数</p>
+</li>
+</ul>
+</li>
+<li><p>ele.attachEvent(‘on’ + type, fn);</p>
+<ul>
+<li><p>IE独有，一个事件同样可以绑定多个处理程序，但是如果同一个函数绑定多次，它也会执行多次</p>
+</li>
+<li><p>type：事件类型</p>
+</li>
+<li><p>fn： 处理函数</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="事件处理程序的运行环境"><a href="#事件处理程序的运行环境" class="headerlink" title="事件处理程序的运行环境"></a>事件处理程序的运行环境</h2><ol>
+<li><p>ele.onxxx = function (event) {}</p>
+<ul>
+<li>程序this指向是dom元素本身</li>
+</ul>
+</li>
+<li><p>obj.addEventListener(type, fn, false);</p>
+<ul>
+<li>程序this指向是dom元素本身</li>
+</ul>
+</li>
+<li><p>obj.attachEvent(‘on’ + type, fn);</p>
+<ul>
+<li>程序this指向window</li>
+</ul>
+</li>
+<li><p>封装兼容性的 addEvent(elem, type, handle)方法</p>
+<p> 事件处理函数handle写在外面，使this指向elem而不是指向window<br> <img src="2020-03-19-12-06-18.png" alt="方法"></p>
+</li>
+</ol>
+<h2 id="解除事件处理程序"><a href="#解除事件处理程序" class="headerlink" title="解除事件处理程序"></a>解除事件处理程序</h2><ol>
+<li><p>ele.onclick = false/“”/null;</p>
+</li>
+<li><p>ele.removeEventListener(type, fn, false);</p>
+</li>
+<li><p>ele.detachEvent(‘on’ + type, fn);</p>
+</li>
+</ol>
+<p><strong>注:若绑定匿名函数，则无法解除。</strong><br>    <img src="2020-03-19-12-15-51.png" alt="例"><br>    <img src="2020-03-19-12-16-00.png" alt="例"></p>
+<h2 id="事件处理模型"><a href="#事件处理模型" class="headerlink" title="事件处理模型"></a>事件处理模型</h2><ol>
+<li><p>事件冒泡：</p>
+<ul>
+<li>结构上（非视觉上）嵌套关系的元素，会存在事件冒泡的功能，即同一事件，自子元素冒泡向父元素。（自底向上）</li>
+</ul>
+</li>
+<li><p>事件捕获：</p>
+<ul>
+<li><p>结构上（非视觉上）嵌套关系的元素，会存在事件捕获的功能，即同一事件，自父元素捕获至子元素（事件源元素）。（自顶向下）</p>
+</li>
+<li><p>IE没有捕获事件</p>
+</li>
+<li><p>开启方式：<code>obj.addEventListener(type, fn, true);</code></p>
+</li>
+<li><p>其他事件捕获方式（IE特有）：<code>elem.setCapture();</code>HTML元素硬是任何地方发生的任何事件捕获到自己身上来，这就解决的物体拖拽时因为鼠标移动过快，而物体跟不上鼠标的过程，这种方法对其他元素是有害处的，其他元素的方法会不好使，所以使用完之后要用<code>elem.releaseCapture();</code>释放，这是一个过时的问题，但是面试官可能会问，<strong>不用会操作，知道就行，</strong></p>
+</li>
+</ul>
+</li>
+<li><p>触发顺序：先捕获，后冒泡</p>
+</li>
+<li><p>一个对象的一个事件类型上面绑定着一个处理函数只能遵循一个处理模型<br> <img src="2020-03-19-19-33-25.png" alt="例"><br> <strong>点击黄色区域：</strong></p>
+<pre><code> ![例](2020-03-19-12-43-02.png)
+ ![例](2020-03-19-12-44-50.png)</code></pre>
+<p> <strong>解析：</strong> 先捕获，后冒泡</p>
+<p> <strong>点击黄色区域：</strong></p>
+<pre><code> ![例](2020-03-19-12-44-07.png)
+ ![例](2020-03-19-12-44-29.png)</code></pre>
+<p> <strong>解析：</strong> 红色捕获，绿色捕获，黄色<strong>执行</strong>，黄色<strong>执行</strong>，绿色冒泡，红色冒泡，<strong>黄色执行的顺序应该符合谁先绑定谁先执行</strong></p>
+</li>
+<li><p>focus，blur，change，submit，reset，select 等事件不冒泡</p>
+</li>
+</ol>
+<h2 id="取消冒泡（系统有时候会自动添加冒泡）"><a href="#取消冒泡（系统有时候会自动添加冒泡）" class="headerlink" title="取消冒泡（系统有时候会自动添加冒泡）"></a>取消冒泡（系统有时候会自动添加冒泡）</h2><ol>
+<li><p>取消冒泡：</p>
+<ul>
+<li><p>W3C标准 event.stopPropagation();但不支持ie9以下版本<br>  <img src="2020-03-19-12-53-33.png" alt="例"></p>
+</li>
+<li><p>IE谷歌：event.cancelBubble = true;<br>  <img src="2020-03-19-12-54-01.png" alt="例"></p>
+</li>
+<li><p>封装取消冒泡的函数 stopBubble(event)<br>  <img src="2020-03-19-12-56-26.png" alt="例"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="阻止默认事件"><a href="#阻止默认事件" class="headerlink" title="阻止默认事件"></a>阻止默认事件</h2><ol>
+<li><p>默认事件：表单提交，a标签跳转，右键菜单等</p>
+<ul>
+<li><p>return false;  以对象属性的方式注册的事件才生效</p>
+<p>  <img src="2020-03-19-13-01-21.png" alt="例"><br>  点击右键，只在控制台输出a但是不弹出菜单</p>
+</li>
+<li><p>event.preventDefault(); W3C标注，IE9以下不兼容</p>
+<p>  <img src="2020-03-19-13-13-49.png" alt="例"></p>
+</li>
+<li><p>event.returnValue = false; 兼容IE</p>
+<p>  <img src="2020-03-19-13-14-15.png" alt="例"></p>
+</li>
+<li><p>封装阻止默认事件的函数 cancelHandler(event);<br>  <img src="2020-03-19-13-15-50.png" alt="例"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ol>
+<li><p>e （非IE）|| window.event （用于IE）</p>
+<pre><code> ![例](2020-03-19-13-24-43.png)</code></pre>
+</li>
+<li><p>事件源（源头）对象:</p>
+<ul>
+<li><p>event.target   火狐独有的</p>
+</li>
+<li><p>event.srcElement  IE独有的</p>
+</li>
+<li><p>这俩chrome都有</p>
+<p>  <img src="2020-03-19-13-39-56.png" alt="例"></p>
+</li>
+</ul>
+</li>
+<li><p>用处：事件委托</p>
+</li>
+<li><p>兼容性写法</p>
+</li>
+</ol>
+<h2 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h2><ol>
+<li><p>利用事件冒泡，和事件源对象进行处理</p>
+</li>
+<li><p>优点：</p>
+<ul>
+<li><p>性能 不需要循环所有的元素一个个绑定事件</p>
+</li>
+<li><p>灵活 当有新的子元素时不需要重新绑定事件</p>
+</li>
+</ul>
+</li>
+<li><p>例题：</p>
+<ul>
+<li>选中li，并输出对应内容，即使动态添加li，点击之后也能输出li内容<br>  <img src="2020-03-19-13-47-26.png" alt="例"></li>
+</ul>
+</li>
+</ol>
+<h2 id="事件分类"><a href="#事件分类" class="headerlink" title="事件分类"></a>事件分类</h2><ol>
+<li><p>鼠标事件</p>
+<ul>
+<li><p>click、mousedown、mouseup，mouseover、mouseout，mouseenter mouseleave，mousemove、contextmenu、</p>
+<ul>
+<li><p>click、mousedown、mouseup(click = mousedown + mouseup)和绑定顺序没关系，和触发先后顺序有关<br>  <img src="2020-03-19-17-20-58.png" alt="例"><br>  <img src="2020-03-19-17-21-10.png" alt="例"></p>
+</li>
+<li><p>mouseover鼠标覆盖是发生什么事，mouseout鼠标离开时发生什么事，实际上CSS中hover就是用JS写的</p>
+</li>
+<li><p>mouseenter、mouseleave HTML5新规范，效果与上面的相同<br>  <img src="2020-03-19-17-38-29.png" alt="例"></p>
+</li>
+</ul>
+</li>
+<li><p>能区分鼠标左右键的只有mousedown、mouseup，用事件对象的button属性来区分鼠标的按键，0/1/2 –&gt; 左键/滚动论/右键<br>  <img src="2020-03-19-17-43-52.png" alt="li"></p>
+</li>
+<li><p>DOM3标准规定:click事件只能监听左键,只能通过mousedown 和 mouseup来判断鼠标键</p>
+</li>
+<li><p>如何解决mousedown和click的冲突</p>
+</li>
+</ul>
+</li>
+<li><p>键盘事件</p>
+<ul>
+<li><p>keydown keyup keypress</p>
+</li>
+<li><p>keydown &gt; keypress &gt; keyup</p>
+</li>
+<li><p>keydown和keypress的区别</p>
+<ul>
+<li><p>keydown可以响应任意键盘按键，keypress只可以相应字符类键盘按键(ASCII码表里面有的都是字符类按键,fn不在ASCII码表里，所以是辅助按键)</p>
+</li>
+<li><p>keypress返回ASCII码，可以转换成相应字符</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>文本类事件</p>
+<ul>
+<li><p>input：只要文本有变化就会触发</p>
+</li>
+<li><p>change：监听聚焦和失去焦点两个状态，如果两个状态前后没变化则不触发，否则触发</p>
+</li>
+<li><p>focus：聚焦时状态</p>
+</li>
+<li><p>blur：失去焦点时的状态</p>
+</li>
+</ul>
+</li>
+<li><p>窗体操作类(window上的事件)</p>
+<ul>
+<li><p>scroll：滚动条滚动，事件触发</p>
+</li>
+<li><p>load：没意义且最慢，当页面的解析加载等全部操作做完之后，只等待交互体验时才触发</p>
+</li>
+<li><p>小练习:fixed定位 js兼容版（IE6没有fixed定位）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><p><strong>习题1：</strong><br>    <img src="2020-03-19-11-27-13.png" alt="习题"><br>    <img src="2020-03-19-11-42-03.png" alt="答案"></p>
+<p><strong>习题2：</strong> 拖拽应用<br>    <img src="2020-03-19-17-03-29.png" alt="答案"><br>    这种方法很粗糙，要求用addEventListener绑定事件，并且将所有代码封装到一个函数drg(elem)里去</p>

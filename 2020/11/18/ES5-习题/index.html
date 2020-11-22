@@ -1,0 +1,363 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>习题 | Wu Hao's Blog</title><meta name="keywords" content="ES5-习题"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="题1    str:”abc1”  typeof(str):”string”  test.length:系统生成对象new String(“string”).length &#x3D;&#x3D; 6; delete  test.sign:系统生成对象new String(“string”);向这个对象中添加属性及属性值，delete  console.log(test.sign):系统生成对象new String">
+<meta property="og:type" content="article">
+<meta property="og:title" content="习题">
+<meta property="og:url" content="http://example.com/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/index.html">
+<meta property="og:site_name" content="Wu Hao&#39;s Blog">
+<meta property="og:description" content="题1    str:”abc1”  typeof(str):”string”  test.length:系统生成对象new String(“string”).length &#x3D;&#x3D; 6; delete  test.sign:系统生成对象new String(“string”);向这个对象中添加属性及属性值，delete  console.log(test.sign):系统生成对象new String">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557">
+<meta property="article:published_time" content="2020-11-18T08:03:04.000Z">
+<meta property="article:modified_time" content="2020-11-22T06:40:18.388Z">
+<meta property="article:author" content="Wu Hao">
+<meta property="article:tag" content="ES5-习题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wu Hao","link":"链接: ","source":"来源: Wu Hao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isSidebar: false,
+  postUpdate: '2020-11-22 14:40:18'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">181</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="post-bg" id="page-header" style="background-image: url(https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">习题</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:03:04.000Z" title="发表于 2020-11-18 16:03:04">2020-11-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T06:40:18.388Z" title="更新于 2020-11-22 14:40:18">2020-11-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ES5/">ES5</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><ol>
+<li>题1</li>
+</ol>
+<p><img src="2020-02-29-16-22-55.png" alt="例1"></p>
+<ul>
+<li><p>str:”abc1”</p>
+</li>
+<li><p>typeof(str):”string”</p>
+</li>
+<li><p>test.length:系统生成对象new String(“string”).length == 6; <strong>delete</strong></p>
+</li>
+<li><p>test.sign:系统生成对象new String(“string”);向这个对象中添加属性及属性值，<strong>delete</strong></p>
+</li>
+<li><p>console.log(test.sign):系统生成对象new String(“string”);访问对象的sign属性，结果是undefined</p>
+</li>
+<li><p>系统每次删除对象之后再生成的对象都是新对象</p>
+</li>
+</ul>
+<ol start="2">
+<li>题2</li>
+</ol>
+<p><img src="2020-02-29-16-38-16.png" alt="例2"></p>
+<ul>
+<li><p>答案：A</p>
+</li>
+<li><p>原因：实参传值给形参，但是函数体里边没有用到形参</p>
+</li>
+</ul>
+<ol start="3">
+<li>题3</li>
+</ol>
+<p><img src="2020-02-29-16-39-43.png" alt="例3"></p>
+<ul>
+<li><p>考点：闭包，内部函数被隐式的return this保存到了外部</p>
+</li>
+<li><p>答案：1 2 1</p>
+</li>
+<li><p>原因：oPerson.say():执行函数sss，产生sssAO{}放到作用域链最顶端，沿着作用域链往下找，a = 1;第二次执行时，a = 2;</p>
+</li>
+<li><p>注意：构造函数中的 a，对象中没有，对象中只有this的内容</p>
+</li>
+</ul>
+<ol start="4">
+<li>题4</li>
+</ol>
+<p><img src="2020-02-29-16-52-28.png" alt="例4"></p>
+<ul>
+<li><p>答案：1 4 4</p>
+</li>
+<li><p>原因：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">GO：&#123;</span><br><span class="line">    x:<span class="literal">undefined</span>;</span><br><span class="line">    y:<span class="literal">undefined</span>;</span><br><span class="line">    add:<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> n = n + <span class="number">1</span>;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">==&gt;</span><br><span class="line"></span><br><span class="line">GO：&#123;</span><br><span class="line">    x:<span class="number">1</span>;</span><br><span class="line">    y:<span class="number">0</span>;</span><br><span class="line">    add:<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> n = n + <span class="number">3</span>;&#125;</span><br><span class="line">    z:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span> z = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">GO：&#123;</span><br><span class="line">    x:<span class="number">1</span>;</span><br><span class="line">    y:<span class="number">0</span>;</span><br><span class="line">    add:<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">n</span>)</span>&#123;<span class="keyword">return</span> n = n + <span class="number">3</span>;&#125;</span><br><span class="line">    z:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> y = add(x); ==&gt;y = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> z = add(x); ==&gt;z = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 第<span class="number">2</span> <span class="number">3</span>步的x、add()都从GO中拿</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>题5</li>
+</ol>
+<p><img src="2020-03-01-09-22-17.png" alt="例5"></p>
+<ol start="6">
+<li>题6</li>
+</ol>
+<p><img src="2020-03-01-09-23-23.png" alt="例6"></p>
+<ol start="7">
+<li>题7</li>
+</ol>
+<p><img src="2020-03-01-09-24-15.png" alt="例7"></p>
+<ol start="8">
+<li>题8</li>
+</ol>
+<p><img src="2020-03-01-09-24-59.png" alt="例8"></p>
+<ol start="9">
+<li>题9</li>
+</ol>
+<p><img src="2020-02-29-18-08-50.png" alt="例4"></p>
+<ol start="10">
+<li>题10</li>
+</ol>
+<ul>
+<li>控制台输入<code>person.name</code>，应该输出什么</li>
+</ul>
+<p><img src="2020-03-01-17-17-24.png" alt="习题1"></p>
+<ul>
+<li><p>答案：”cherry”</p>
+</li>
+<li><p>解析：控制台输入的内容相当于是在程序逻辑最后面的代码块，所以”cherry”会覆盖”sunny”</p>
+</li>
+</ul>
+<ol start="11">
+<li>题11</li>
+</ol>
+<ul>
+<li>控制台输入<code>person.name</code>，person.name应该输出什么</li>
+</ul>
+<p><img src="2020-03-01-17-17-53.png" alt="习题2"></p>
+<ul>
+<li><p>答案：”cherry”</p>
+</li>
+<li><p>解析：控制台输入的内容相当于是在程序逻辑最后面的代码块，所以”cherry”会覆盖”sunny”</p>
+</li>
+</ul>
+<ol start="12">
+<li>题12</li>
+</ol>
+<p><img src="2020-03-01-17-18-31.png" alt="习题3"><br><img src="2020-03-01-17-18-48.png" alt="打个比方"></p>
+<ul>
+<li>答案：”sunny”</li>
+</ul>
+<ul>
+<li>解析：一开始，函数原型的name是”sunny”，用构造函数构造对象后，对象person继承了”sunny”，然后函数原型指向了一个新的对象（因为函数原型是一个对象，是引用值），此时person已经继承了原先的对象，即使函数原型的指向发生了变化，但是也不能修改了</li>
+</ul>
+<ol start="13">
+<li>题13</li>
+</ol>
+<p><img src="2020-03-01-17-24-06.png" alt="习题4"></p>
+<ul>
+<li><p>答案：”cherry”  </p>
+</li>
+<li><p>解析：在对象person还没有生成之前，函数原型的引用值就已经发生了变化，所以对象person继承的是函数原型修改之后的内容</p>
+</li>
+</ul>
+<ol start="14">
+<li>题14</li>
+</ol>
+<ul>
+<li>控制台输入son.num ++,求son.num</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = <span class="string">&quot;wu&quot;</span>;</span><br><span class="line">    <span class="built_in">this</span>.fortune = <span class="number">100</span>;</span><br><span class="line">    <span class="built_in">this</span>.num = <span class="number">100</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> father = <span class="keyword">new</span> Father();</span><br><span class="line"></span><br><span class="line">Son.prototype = father;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.habbit = <span class="string">&quot;smoke&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> son = <span class="keyword">new</span> Son();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>答案： 101</p>
+</li>
+<li><p>解析： son没有num，所以继承了father的num，然后执行son.num ++，相当于将原始值赋值给son.num，就是给son增加了一个属性<br>，控制台输入son之后，可以发现son内部多了一个num属性</p>
+</li>
+</ul>
+<p><img src="2020-03-07-22-41-50.png" alt="无"></p>
+<ol start="15">
+<li>题15 </li>
+</ol>
+<ul>
+<li>控制台输入person.sayName,输出什么？</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Person.prototype = &#123;</span><br><span class="line">    name : <span class="string">&quot;a&quot;</span>,</span><br><span class="line">    sayName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = <span class="string">&quot;b&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>答案： b</p>
+</li>
+<li><p>解析： *.sayName,sayName里边的this指向的是，谁调用的sayName(),this就指向谁</p>
+</li>
+<li><p>情况一： 当构造函数Person函数体内没有内容时，person继承了sayName，所以<code>person.sayName();</code>里面的this指向person，此时person的name来自于Person.prototype，也是继承来的</p>
+</li>
+<li><p>情况二： 当构造函数Person函数体内有name时，那就用自己的</p>
+</li>
+</ul>
+<ol start="16">
+<li>题16 </li>
+</ol>
+<ul>
+<li>执行person.eat();person的输出结果？</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Person.prototype = &#123;</span><br><span class="line">    height : <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.height  ++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Person();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>答案：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span> &#123;</span><br><span class="line">    eat : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.height  ++;</span><br><span class="line">    &#125;</span><br><span class="line">    height : <span class="number">101</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li>题17</li>
+</ol>
+<p><img src="2020-03-17-22-19-37.png" alt="习题"></p>
+<ol start="18">
+<li>题18</li>
+</ol>
+<p><img src="2020-03-17-22-18-12.png" alt="习题"><br><img src="2020-03-25-17-02-53.png" alt="答案"></p>
+<ol start="19">
+<li>题19</li>
+</ol>
+<p><img src="2020-03-17-22-17-31.png" alt="习题"><br><img src="2020-03-25-17-17-17.png" alt="答案"></p>
+<ul>
+<li>思考：nextElementSibling,previousElementSibling这两种方法在IE9及IE9以下不能用，怎么改进？</li>
+</ul>
+<p><img src="2020-03-25-17-27-21.png" alt="答案"><br><img src="2020-03-25-17-27-56.png" alt="答案"></p>
+<ol start="20">
+<li>题20</li>
+</ol>
+<p><img src="2020-03-17-22-18-56.png" alt="习题"><br><img src="2020-03-25-17-12-57.png" alt="答案"></p>
+<ol start="21">
+<li>题21</li>
+</ol>
+<p><img src="2020-03-17-22-19-21.png" alt="习题"><br><img src="2020-03-25-17-14-05.png" alt="答案"></p>
+<ol start="22">
+<li>题22</li>
+</ol>
+<p><img src="2020-03-17-23-05-58.png" alt="习题"><br><img src="2020-03-25-17-33-30.png" alt="答案"></p>
+<ol start="23">
+<li>题23</li>
+</ol>
+<p><img src="2020-03-18-08-18-41.png" alt="习题"><br><img src="2020-03-18-08-19-22.png" alt="习题"><br><img src="2020-03-25-17-36-43.png" alt="答案"></p>
+<ol start="24">
+<li>题24</li>
+</ol>
+<p><img src="2020-03-18-08-19-52.png" alt="习题"></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:303459939@qq.com">Wu Hao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/">http://example.com/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Wu Hao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ES5-%E4%B9%A0%E9%A2%98/">ES5-习题</a></div><div class="post_share"><div class="social-share" data-image="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/11/18/ES5-%E4%BA%8B%E4%BB%B6/%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2020/11/18/ES5-JS%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF/"><img class="next-cover" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">异步加载与时间线</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

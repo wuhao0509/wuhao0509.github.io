@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>vue响应式1 | Wu Hao's Blog</title><meta name="keywords" content="Vue-vue响应式"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、vue的响应式&lt;div id&#x3D;&quot;app&quot;&gt;&amp;#123;&amp;#123; mrDeng &amp;#125;&amp;#125;&lt;&#x2F;div&gt;&lt;script&gt;const vm &#x3D; new Vue(&amp;#123;    el: &amp;#x27;#app&amp;#x27;,    data: &amp;#123;        mrDeng: &amp;#x27;邓哥：风姿绰约、花枝招展&amp;#x">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>vue响应式1 | Wu Hao's Blog</title><meta name="keywords" content="Vue-vue响应式"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、vue实例&lt;div id&#x3D;&quot;app&quot;&gt;&amp;#123;&amp;#123; mrDeng &amp;#125;&amp;#125;&lt;&#x2F;div&gt;&lt;script&gt;const vm &#x3D; new Vue(&amp;#123;    el: &amp;#x27;#app&amp;#x27;,    data: &amp;#123;        mrDeng: &amp;#x27;邓哥：风姿绰约、花枝招展&amp;#x27">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue响应式1">
 <meta property="og:url" content="http://example.com/2020/11/17/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F1/index.html">
 <meta property="og:site_name" content="Wu Hao&#39;s Blog">
-<meta property="og:description" content="一、vue的响应式&lt;div id&#x3D;&quot;app&quot;&gt;&amp;#123;&amp;#123; mrDeng &amp;#125;&amp;#125;&lt;&#x2F;div&gt;&lt;script&gt;const vm &#x3D; new Vue(&amp;#123;    el: &amp;#x27;#app&amp;#x27;,    data: &amp;#123;        mrDeng: &amp;#x27;邓哥：风姿绰约、花枝招展&amp;#x">
+<meta property="og:description" content="一、vue实例&lt;div id&#x3D;&quot;app&quot;&gt;&amp;#123;&amp;#123; mrDeng &amp;#125;&amp;#125;&lt;&#x2F;div&gt;&lt;script&gt;const vm &#x3D; new Vue(&amp;#123;    el: &amp;#x27;#app&amp;#x27;,    data: &amp;#123;        mrDeng: &amp;#x27;邓哥：风姿绰约、花枝招展&amp;#x27">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&fm=26&gp=0.jpg">
 <meta property="article:published_time" content="2020-11-17T14:19:00.000Z">
-<meta property="article:modified_time" content="2020-11-19T02:26:38.795Z">
+<meta property="article:modified_time" content="2020-11-25T12:21:26.053Z">
 <meta property="article:author" content="Wu Hao">
 <meta property="article:tag" content="Vue-vue响应式">
 <meta name="twitter:card" content="summary">
@@ -80,7 +80,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: true,
   isSidebar: true,
-  postUpdate: '2020-11-19 10:26:38'
+  postUpdate: '2020-11-25 20:21:26'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,47 +142,50 @@ var saveToLocal = {
     if (t === 'dark') activateDarkMode()
     else if (t === 'light') activateLightMode()
   }
-})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">192</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">184</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81vue%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">一、vue的响应式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81vm-el"><span class="toc-number">2.</span> <span class="toc-text">二、vm.$el</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81vm-nextTick-amp-Vue-nextTick"><span class="toc-number">3.</span> <span class="toc-text">三、vm.$nextTick &amp; Vue.nextTick</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81vue%E5%B0%8F%E7%BC%BA%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">四、vue小缺点</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">vue响应式1</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-17T14:19:00.000Z" title="发表于 2020-11-17 22:19:00">2020-11-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-19T02:26:38.795Z" title="更新于 2020-11-19 10:26:38">2020-11-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Vue/">Vue</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、vue的响应式"><a href="#一、vue的响应式" class="headerlink" title="一、vue的响应式"></a>一、vue的响应式</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">&#123;&#123; mrDeng &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">        mrDeng: <span class="string">&#x27;邓哥：风姿绰约、花枝招展&#x27;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="javascript">vm.mrDeng = <span class="string">&#x27;手如柔荑、肤如凝脂&#x27;</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">192</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">184</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81vue%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">一、vue实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9B%B4%E6%94%B9%E6%95%B0%E6%8D%AE%E5%90%8E%EF%BC%8C%E9%A1%B5%E9%9D%A2%E4%BC%9A%E7%AB%8B%E5%88%BB%E9%87%8D%E6%96%B0%E6%B8%B2%E6%9F%93%E5%90%97%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">二、更改数据后，页面会立刻重新渲染吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E5%9C%A8%E6%9B%B4%E6%94%B9%E6%95%B0%E6%8D%AE%E5%90%8E%EF%BC%8C%E7%9C%8B%E5%88%B0%E6%B8%B2%E6%9F%93%E5%90%8E%E7%9A%84%E9%A1%B5%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%80%BC%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">三、如何在更改数据后，看到渲染后的页面上的值？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81vue%E5%B0%8F%E7%BC%BA%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">四、vue小缺点</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">vue响应式1</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-17T14:19:00.000Z" title="发表于 2020-11-17 22:19:00">2020-11-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-25T12:21:26.053Z" title="更新于 2020-11-25 20:21:26">2020-11-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Vue/">Vue</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、vue实例"><a href="#一、vue实例" class="headerlink" title="一、vue实例"></a>一、vue实例</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">&#123;&#123; mrDeng &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">        mrDeng: <span class="string">&#x27;邓哥：风姿绰约、花枝招展&#x27;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="javascript">vm.mrDeng = <span class="string">&#x27;手如柔荑、肤如凝脂&#x27;</span>;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ol>
-<li><strong>问：为什么data会直接出现在vm实例对象中咧？</strong></li>
+<li><strong>为什么data会直接出现在vm实例对象中咧？</strong></li>
 </ol>
 <ul>
 <li>当创建vue实例时，vue会将data中的成员代理给vue实例，目的是为了实现响应式，监控数据变化，执行某个监听函数</li>
 </ul>
 <ol start="2">
-<li><strong>问：实例中除了data数据外，其他东西是啥?</strong></li>
+<li><strong>实例中除了data数据外，其他东西是啥?</strong></li>
 </ol>
 <ul>
-<li><p>为了防止名称冲突。</p>
-</li>
 <li><p>因为会将data中数据代理给vue，假如说我们自己写的data名称和vue中自带的属性冲突了，那么就会覆盖vue内部的属性</p>
 </li>
-<li><p>所以vue会把自己内部的属性成员名称前加上<code>$</code>或<code>_</code>，如果加上的是<code>$</code>，代表是我们可以使用的，如果加上的是<code>_</code>，是vue自己内部使用的方法或属性，我们不需要调用</p>
+<li><p>所以vue会把自己内部的属性成员名称前加上<code>$</code>或<code>_</code></p>
+</li>
+<li><p>如果加上的是<code>$</code>，代表是我们可以使用的</p>
+</li>
+<li><p>如果加上的是<code>_</code>，是vue自己内部使用的方法或属性，我们不需要调用</p>
 </li>
 </ul>
 <ol start="3">
-<li><strong>更改数据后，页面会立刻重新渲染吗？</strong></li>
+<li><strong>vm.$el</strong></li>
 </ol>
 <ul>
-<li><p>vue更新DOM的操作是<strong>异步执行</strong>的，只要侦听到数据变化，将开启一个异步队列，如果一个数据被多次变更，那么只会被推入到队列中一次，这样可以避免不必要的计算和DOM操作</p>
+<li>值为被Vue控制的元素（或者说，Vue挂载的元素）</li>
+</ul>
+<h2 id="二、更改数据后，页面会立刻重新渲染吗？"><a href="#二、更改数据后，页面会立刻重新渲染吗？" class="headerlink" title="二、更改数据后，页面会立刻重新渲染吗？"></a>二、更改数据后，页面会立刻重新渲染吗？</h2><ol>
+<li><p>vue更新DOM的操作是<strong>异步执行</strong>的，只要侦听到数据变化，将开启一个异步队列</p>
+</li>
+<li><p>如果一个数据被多次变更，那么只会被推入到队列中一次，这样可以避免不必要的计算和DOM操作</p>
 </li>
 <li><p>同步执行栈执行完毕后，会执行异步队列</p>
 </li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line">    data: &#123;</span><br><span class="line"><span class="javascript">        msg: <span class="string">&#x27;杉杉&#x27;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="javascript">    vm.msg = <span class="string">&#x27;杉杉超美的&#x27;</span>;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(vm.msg); <span class="comment">// 杉杉超美的，此时数据已更改</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(vm.$el.innerHTML); <span class="comment">// 杉杉。此时页面还未重新渲染</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<li><p>下面代码中重复改变vm.msg的值但是页面只渲染一次</p>
+</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">    el:<span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line">    data:&#123;</span><br><span class="line"><span class="javascript">        msg:<span class="string">&#x27;msg1&#x27;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="javascript">vm.msg = <span class="string">&#x27;msg2&#x27;</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="string">`vm.msg-&gt;<span class="subst">$&#123;vm.msg&#125;</span>\nvm.$el.innerHTML-&gt;<span class="subst">$&#123;vm.$el.innerHTML&#125;</span>`</span>)</span></span><br><span class="line"><span class="javascript">vm.msg = <span class="string">&#x27;msg3&#x27;</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="string">`vm.msg-&gt;<span class="subst">$&#123;vm.msg&#125;</span>\nvm.$el.innerHTML-&gt;<span class="subst">$&#123;vm.$el.innerHTML&#125;</span>`</span>)</span></span><br><span class="line"><span class="javascript">vm.msg = <span class="string">&#x27;msg4&#x27;</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="string">`vm.msg-&gt;<span class="subst">$&#123;vm.msg&#125;</span>\nvm.$el.innerHTML-&gt;<span class="subst">$&#123;vm.$el.innerHTML&#125;</span>`</span>)</span></span><br><span class="line"><span class="javascript">vm.msg = <span class="string">&#x27;msg5&#x27;</span></span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(<span class="string">`vm.msg-&gt;<span class="subst">$&#123;vm.msg&#125;</span>\nvm.$el.innerHTML-&gt;<span class="subst">$&#123;vm.$el.innerHTML&#125;</span>`</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="二、vm-el"><a href="#二、vm-el" class="headerlink" title="二、vm.$el"></a>二、vm.$el</h2><ol>
-<li>值为被Vue控制的元素（或者说，Vue挂载的元素）</li>
+<p><img src="2020-11-25-20-02-43.png"></p>
+<h2 id="三、如何在更改数据后，看到渲染后的页面上的值？"><a href="#三、如何在更改数据后，看到渲染后的页面上的值？" class="headerlink" title="三、如何在更改数据后，看到渲染后的页面上的值？"></a>三、如何在更改数据后，看到渲染后的页面上的值？</h2><ol>
+<li><strong>利用vm.$nextTick或Vue.nextTick，在页面重新渲染，DOM更新后，会立刻执行vm.$nextTick中的方法</strong></li>
 </ol>
-<h2 id="三、vm-nextTick-amp-Vue-nextTick"><a href="#三、vm-nextTick-amp-Vue-nextTick" class="headerlink" title="三、vm.$nextTick &amp; Vue.nextTick"></a>三、vm.$nextTick &amp; Vue.nextTick</h2><ol>
-<li><strong>如何在更改数据后，看到渲染后的页面上的值？</strong></li>
-</ol>
-<ul>
-<li>答：利用vm.$nextTick或Vue.nextTick，在页面重新渲染，DOM更新后，会立刻执行vm.$nextTick</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    msg: <span class="string">&#x27;杉杉&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">vm.msg = <span class="string">&#x27;杉杉超美的&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(vm.msg); <span class="comment">// 杉杉超美的，此时数据已更改</span></span><br><span class="line"><span class="comment">// 1. 使用vm.$nextTick</span></span><br><span class="line">vm.$nextTick(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(vm.$el.innerHTML); <span class="comment">// 杉杉超美的</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 2. 使用Vue.nextTick</span></span><br><span class="line">Vue.nextTick(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(vm.$el.innerHTML); <span class="comment">// 杉杉超美的</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">  el: <span class="string">&#x27;#app&#x27;</span>,</span></span><br><span class="line">  data: &#123;</span><br><span class="line"><span class="javascript">    msg: <span class="string">&#x27;杉杉&#x27;</span></span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="javascript">vm.msg = <span class="string">&#x27;杉杉超美的&#x27;</span>;</span></span><br><span class="line"><span class="javascript"><span class="built_in">console</span>.log(vm.msg); <span class="comment">// 杉杉超美的，此时数据已更改</span></span></span><br><span class="line"><span class="javascript"><span class="comment">// 1. 使用vm.$nextTick</span></span></span><br><span class="line"><span class="javascript">vm.$nextTick(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(vm.$el.innerHTML); <span class="comment">// 杉杉超美的</span></span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="javascript"><span class="comment">// 2. 使用Vue.nextTick</span></span></span><br><span class="line"><span class="javascript">Vue.nextTick(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">  <span class="built_in">console</span>.log(vm.$el.innerHTML); <span class="comment">// 杉杉超美的</span></span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li><strong>vm.nextTick和Vue.nextTick还可以作为Promise使用</strong></li>
@@ -201,33 +204,43 @@ var saveToLocal = {
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">vm.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">// vm实例</span></span><br><span class="line">&#125;)</span><br><span class="line">Vue.nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">this</span>); <span class="comment">// window</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <ol start="4">
-<li><strong>好奇nextTick是怎么实现的吗？</strong></li>
+<li><strong>宏任务与微任务</strong></li>
 </ol>
-<ul>
-<li><p><strong>异步任务</strong></p>
-<ul>
-<li><p>异步任务分为宏任务（macro）和微任务（micro）</p>
-</li>
-<li><p>宏任务比较慢（如setTimeout等），微任务比较快（如Promise.then()等）</p>
-</li>
-<li><p>微任务在前，宏任务在后（eventloop，事件环）</p>
-</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>异步任务</th>
+<th>微任务</th>
+<th>宏任务</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>执行速度</td>
+<td>快</td>
+<td>慢</td>
+</tr>
+<tr>
+<td>执行顺序</td>
+<td>先执行</td>
+<td>后执行</td>
+</tr>
+</tbody></table>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 控制台打印顺序：promise &gt; timeout</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;timeout&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>)  </span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;promise&#x27;</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
+<ol start="5">
+<li><strong>好奇nextTick是怎么实现的吗？</strong></li>
+</ol>
 <ul>
 <li><strong>在nextTick的实现源码中，会先判断是否支持微任务，不支持后，才会执行宏任务</strong></li>
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">Promise</span> !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">// 微任务</span></span><br><span class="line">    <span class="comment">// 首先看一下浏览器中有没有promise</span></span><br><span class="line">    <span class="comment">// 因为IE浏览器中不能执行Promise</span></span><br><span class="line">    <span class="keyword">const</span> p = <span class="built_in">Promise</span>.resolve();</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> MutationObserver !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">// 微任务</span></span><br><span class="line">    <span class="comment">// 突变观察</span></span><br><span class="line">    <span class="comment">// 监听文档中文字的变化，如果文字有变化，就会执行回调</span></span><br><span class="line">    <span class="comment">// vue的具体做法是：创建一个假节点，然后让这个假节点稍微改动一下，就会执行对应的函数</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> setImmediate !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">// 宏任务</span></span><br><span class="line">    <span class="comment">// 只在IE下有</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 宏任务</span></span><br><span class="line">    <span class="comment">// 如果上面都不能执行，那么则会调用setTimeout</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<ul>
+<ol start="6">
 <li><strong>曾经vue用过的宏任务</strong><ul>
 <li>MessageChannel 消息通道 宏任务</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h2 id="四、vue小缺点"><a href="#四、vue小缺点" class="headerlink" title="四、vue小缺点"></a>四、vue小缺点</h2><ol>
 <li>vue一直等待主线程上的任务执行完毕，假如主线程上的任务执行时间长了或者出现了其他的问题，那么页面就卡死了</li>
 </ol>

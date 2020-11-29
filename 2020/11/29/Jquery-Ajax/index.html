@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ajax | Wu Hao's Blog</title><meta name="keywords" content="Jquery-Ajax"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、工具方法Ajax 参数 obj  属性及属性值   url: &amp;#x27;https:&#x2F;&#x2F;open.duyiedu.com&#x2F;jq&#x2F;person&amp;#x27;type: 请求方式data: &amp;#123;&amp;#125; 参数 信息success: 请求成功后的处理函数error: 请求失败后的处理函数complete: 请求完成的处理函数 最后执行context: 改变函数上下文timeout: 设置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax">
+<meta property="og:url" content="http://example.com/2020/11/29/Jquery-Ajax/index.html">
+<meta property="og:site_name" content="Wu Hao&#39;s Blog">
+<meta property="og:description" content="一、工具方法Ajax 参数 obj  属性及属性值   url: &amp;#x27;https:&#x2F;&#x2F;open.duyiedu.com&#x2F;jq&#x2F;person&amp;#x27;type: 请求方式data: &amp;#123;&amp;#125; 参数 信息success: 请求成功后的处理函数error: 请求失败后的处理函数complete: 请求完成的处理函数 最后执行context: 改变函数上下文timeout: 设置">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4243152510,3375696239&fm=26&gp=0.jpg">
+<meta property="article:published_time" content="2020-11-29T07:17:56.000Z">
+<meta property="article:modified_time" content="2020-11-29T07:21:15.043Z">
+<meta property="article:author" content="Wu Hao">
+<meta property="article:tag" content="Jquery-Ajax">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4243152510,3375696239&fm=26&gp=0.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2020/11/29/Jquery-Ajax/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wu Hao","link":"链接: ","source":"来源: Wu Hao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isSidebar: true,
+  postUpdate: '2020-11-29 15:21:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">216</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">208</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95Ajax"><span class="toc-number">1.</span> <span class="toc-text">一、工具方法Ajax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95Callbacks"><span class="toc-number">2.</span> <span class="toc-text">二、工具方法Callbacks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-JS%E5%BC%82%E6%AD%A5%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 JS异步回调机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%9F%BA%E6%9C%AC%E9%80%BB%E8%BE%91%E4%B8%AD%E7%9A%84%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 基本逻辑中的回调机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Ajax%E4%B8%AD%E7%9A%84%E5%9B%9E%E8%B0%83%E6%9C%BA%E5%88%B6"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 Ajax中的回调机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95Deferred"><span class="toc-number">3.</span> <span class="toc-text">三、工具方法Deferred</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95then"><span class="toc-number">4.</span> <span class="toc-text">四、实例方法then</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1"><span class="toc-number">5.</span> <span class="toc-text">五、回调地狱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">6.</span> <span class="toc-text">六、回调地狱的优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95when"><span class="toc-number">7.</span> <span class="toc-text">七、实例方法when</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1%E6%96%B9%E6%B3%95%E4%B8%8Ewhen%E6%96%B9%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">8.</span> <span class="toc-text">八、回调地狱方法与when方法的对比</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4243152510,3375696239&amp;fm=26&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Ajax</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-29T07:17:56.000Z" title="发表于 2020-11-29 15:17:56">2020-11-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-29T07:21:15.043Z" title="更新于 2020-11-29 15:21:15">2020-11-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/jQuery/">jQuery</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、工具方法Ajax"><a href="#一、工具方法Ajax" class="headerlink" title="一、工具方法Ajax"></a>一、工具方法Ajax</h2><ol>
+<li><p>参数 obj</p>
+</li>
+<li><p>属性及属性值</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">url: <span class="string">&#x27;https://open.duyiedu.com/jq/person&#x27;</span></span><br><span class="line">type: 请求方式</span><br><span class="line">data: &#123;&#125; 参数 信息</span><br><span class="line">success: 请求成功后的处理函数</span><br><span class="line">error: 请求失败后的处理函数</span><br><span class="line">complete: 请求完成的处理函数 最后执行</span><br><span class="line">context: 改变函数上下文</span><br><span class="line">timeout: 设置请求时间</span><br><span class="line"><span class="keyword">async</span>: <span class="literal">true</span> <span class="literal">false</span> 是否异步</span><br><span class="line">dataType: <span class="string">&#x27;jsonp&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>返回延迟对象</li>
+</ol>
+<h2 id="二、工具方法Callbacks"><a href="#二、工具方法Callbacks" class="headerlink" title="二、工具方法Callbacks"></a>二、工具方法Callbacks</h2><h3 id="2-1-JS异步回调机制"><a href="#2-1-JS异步回调机制" class="headerlink" title="2.1 JS异步回调机制"></a>2.1 JS异步回调机制</h3><ol>
+<li>JS单线程，异步编程优化体验，防止阻塞页面，异步部分向执行队列传递信息需要回调函数</li>
+</ol>
+<p><img src="2020-04-20-08-56-32.png" alt="图"></p>
+<h3 id="2-2-基本逻辑中的回调机制"><a href="#2-2-基本逻辑中的回调机制" class="headerlink" title="2.2 基本逻辑中的回调机制"></a>2.2 基本逻辑中的回调机制</h3><ol>
+<li><p>函数的参数：当一个状态结束之后执行的函数，如运动函数中的回调函数</p>
+</li>
+<li><p>$.Callbacks</p>
+</li>
+</ol>
+<ul>
+<li><p>$.Callbacks()返回回调对象，回调对象相当于一个大筐，里面放一些你想要回调的处理函数</p>
+</li>
+<li><p>参数：”once” “memory” “unique” “stopOnFalse”</p>
+<ul>
+<li><p>“once”：只能fire一次</p>
+</li>
+<li><p>“memory”：将回调对象内的处理函数一次性都fire出来，即使处理函数是在fire后添加的（相当于将所有处理函数记下来之后再执行）</p>
+</li>
+<li><p>“unique”：去重，fire时回调对象内重复的函数只执行一次</p>
+</li>
+<li><p>“stopOnFalse”：停止，fire时想要在哪个函数停止，就在哪个函数里面加上return false</p>
+</li>
+</ul>
+</li>
+<li><p>add：向回调对象中添加回调处理函数</p>
+</li>
+<li><p>fire：</p>
+<ul>
+<li><p>执行回调对象中的处理函数</p>
+</li>
+<li><p>可以给回调对象的处理函数传参</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-Ajax中的回调机制"><a href="#2-3-Ajax中的回调机制" class="headerlink" title="2.3 Ajax中的回调机制"></a>2.3 Ajax中的回调机制</h3><ol>
+<li>Ajax中的回调函数底层是用$.callback()实现的</li>
+</ol>
+<h2 id="三、工具方法Deferred"><a href="#三、工具方法Deferred" class="headerlink" title="三、工具方法Deferred"></a>三、工具方法Deferred</h2><ol>
+<li>$.Deferred</li>
+</ol>
+<ul>
+<li>该方法返回一个延迟对象</li>
+</ul>
+<ol start="2">
+<li>注册回调函数的方法</li>
+</ol>
+<ul>
+<li><p>参数为函数，函数可以接收resolve,regect,notify传来的参数</p>
+</li>
+<li><p>done：注册成功的回调函数</p>
+</li>
+<li><p>fail：注册失败的回调函数</p>
+</li>
+<li><p>progress：注册正在进行的回调函数</p>
+</li>
+</ul>
+<ol start="3">
+<li>触发回调函数的方法</li>
+</ol>
+<ul>
+<li><p>可以传多个参数</p>
+</li>
+<li><p>resolve：触发成功的回调函数，</p>
+</li>
+<li><p>regect：触发失败的回调函数</p>
+</li>
+<li><p>notify：触发正在进行的回调函数</p>
+</li>
+</ul>
+<ol start="4">
+<li><p>如果done和fail的回调函数被触发，那么异步操作立刻停止，如果progress回调函数被触发，那么会继续执行</p>
+</li>
+<li><p>可以链式调用</p>
+</li>
+<li><p>让回调函数只在异步操作内部触发，在外部不能触发的方法</p>
+</li>
+</ol>
+<ul>
+<li><p>思路：在一个函数内部用$.Deferred的方法生成一个延迟对象，让该函数返回一个只有注册回调函数功能的延迟对象</p>
+</li>
+<li><p>方法：<code>return df.promise()</code></p>
+</li>
+</ul>
+<p><strong>注意：Ajax的回调函数实际上是由$.callback()实现$.Deferred()实现的</strong></p>
+<h2 id="四、实例方法then"><a href="#四、实例方法then" class="headerlink" title="四、实例方法then"></a>四、实例方法then</h2><ol>
+<li><p>简化注册回调函数的写法</p>
+</li>
+<li><p>链式调用</p>
+</li>
+</ol>
+<ul>
+<li><p>用法一：如果返回值不是延迟对象，前一个then的返回值是下一个then的参数，下一个then绑定的还是原来的延迟对象</p>
+</li>
+<li><p>用法二：如果返回值是延迟对象，下一个then绑定的事件就是这个延迟对象</p>
+</li>
+</ul>
+<h2 id="五、回调地狱"><a href="#五、回调地狱" class="headerlink" title="五、回调地狱"></a>五、回调地狱</h2><ol>
+<li>回调地狱：回调函数内部嵌套Ajax请求，在代码书写上形成三角区</li>
+</ol>
+<h2 id="六、回调地狱的优化"><a href="#六、回调地狱的优化" class="headerlink" title="六、回调地狱的优化"></a>六、回调地狱的优化</h2><ol>
+<li><p>优化回调地狱开头用立即执行函数</p>
+</li>
+<li><p>只优化Ajax内的回调函数 –&gt; 实例方法then</p>
+</li>
+<li><p>优化一个多功能函数 –&gt; 例如事件绑定 + Ajax请求 –&gt; 工具方法Deferred + 实例方法then</p>
+</li>
+</ol>
+<h2 id="七、实例方法when"><a href="#七、实例方法when" class="headerlink" title="七、实例方法when"></a>七、实例方法when</h2><ol>
+<li><p>写法：<code>when(df1,df2,df3).then(function()&#123;&#125;,function()&#123;&#125;)</code></p>
+</li>
+<li><p>参数：一个或多个延迟对象</p>
+</li>
+<li><p>返回值：promise对象</p>
+</li>
+<li><p>延迟对象df1,df2,df3都触发resolve，那么会触发then注册的done回调函数，若有一个触发reject，那么会触发then注册的fail回调函数</p>
+</li>
+</ol>
+<h2 id="八、回调地狱方法与when方法的对比"><a href="#八、回调地狱方法与when方法的对比" class="headerlink" title="八、回调地狱方法与when方法的对比"></a>八、回调地狱方法与when方法的对比</h2><ol>
+<li><p>回调地狱方法解决的是 层层依赖关系的Ajax请求</p>
+</li>
+<li><p>when解决的是 平等关系的Ajax请求</p>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:303459939@qq.com">Wu Hao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/11/29/Jquery-Ajax/">http://example.com/2020/11/29/Jquery-Ajax/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Wu Hao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Jquery-Ajax/">Jquery-Ajax</a></div><div class="post_share"><div class="social-share" data-image="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4243152510,3375696239&amp;fm=26&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2020/11/29/Jquery-%E5%B7%A5%E5%85%B7%E6%96%B9%E6%B3%95/"><img class="next-cover" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4243152510,3375696239&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">工具方法</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

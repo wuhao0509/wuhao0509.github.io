@@ -75,7 +75,7 @@ var saveToLocal = {
   isHome: true,
   isHighlightShrink: true,
   isSidebar: false,
-  postUpdate: '2020-12-16 19:05:50'
+  postUpdate: '2020-12-16 23:51:57'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -137,7 +137,108 @@ var saveToLocal = {
     if (t === 'dark') activateDarkMode()
     else if (t === 'light') activateLightMode()
   }
-})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">233</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">224</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/11/83968b7d177c636fbd78242efe45f275.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wu Hao's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="vue响应式原理">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue响应式原理"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="vue响应式原理">vue响应式原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T02:28:15.000Z" title="发表于 2020-11-19 10:28:15">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-19T15:38:45.091Z" title="更新于 2020-11-19 23:38:45">2020-11-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Vue/">Vue</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">Vue-vue响应式原理</a></span></div><div class="content">一、代码// 用data来模拟vue监听的对象const data = &#123;  name: &#x27;shanshan&#x27;,  age: 18,  shan: &#123;    name: &#x27;shanshan&#x27;,    age: 18,    obj: &#123;&#125;  &#125;,  arr: [1, 2, 3]&#125;const arrayProto = Array.prototype;const arrayMethods = Object.create(arrayProto);[&#x27;push&#x27;, &#x27;pop&#x27;, &#x27;shift&#x27;, &#x27;unshift&#x27; ,&#x27;sort&#x27;, &#x27;splice&#x27;, &#x27;reverse&#x27;].forEach(method =&gt; &#123;  arrayMethods[method] = function () &#123;    arrayProto[method]. ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F2/" title="vue响应式2">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue响应式2"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F2/" title="vue响应式2">vue响应式2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T02:09:56.000Z" title="发表于 2020-11-19 10:09:56">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-25T15:31:32.717Z" title="更新于 2020-11-25 23:31:32">2020-11-25</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Vue/">Vue</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F/">Vue-vue响应式</a></span></div><div class="content">一、更改数据不会渲染页面的情况
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">238</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">229</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">16</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/11/83968b7d177c636fbd78242efe45f275.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wu Hao's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/19/Vue-v-on/" title="v-on指令">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="v-on指令"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Vue-v-on/" title="v-on指令">v-on指令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T15:18:51.000Z" title="发表于 2020-11-19 23:18:51">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-26T16:02:23.881Z" title="更新于 2020-11-27 00:02:23">2020-11-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Vue/">Vue</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Vue-v-on/">Vue-v-on</a></span></div><div class="content">
+v-on 指令可以监听 DOM 事件,简写：@
+
+一、接收一个方法名称
+如果方法代码短，可以直接放到行间，如：&lt;button v-on:click=&quot;counter+=1&quot;&gt;点击加 1&lt;/button&gt;
+
+methods中的函数，和data一样也会直接代理给Vue实例对象
+
+
+&lt;div id=&quot;app&quot;&gt;&lt;button v-on:click=&quot;addCounter&quot;&gt;点击加 1&lt;/button&gt;&lt;p&gt;按钮被点击了 &#123;&#123; counter &#125;&#125; 次&lt;/p&gt;&lt;/div&gt;&lt;script&gt;const vm = new Vue(&#123;el: &#x27;#app&#x27;,data: &#123;    counter: 0&#125;,// 在 methods 对象中定义方法methods: &#123;    addCounter: function (e) &#123;     ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/19/Vue-v-bind/" title="v-bind指令">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="v-bind指令"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Vue-v-bind/" title="v-bind指令">v-bind指令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T15:18:39.000Z" title="发表于 2020-11-19 23:18:39">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-26T15:44:52.290Z" title="更新于 2020-11-26 23:44:52">2020-11-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Vue/">Vue</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Vue-v-bind/">Vue-v-bind</a></span></div><div class="content">
+简写：:
+
+一、绑定特性
+:后的为传递的参数
+
+&lt;!-- 绑定一个属性 --&gt;&lt;img v-bind:src=&quot;imageSrc&quot;&gt;&lt;!-- 动态特性名 (2.6.0+) --&gt;&lt;button v-bind:[key]=&quot;value&quot;&gt;&lt;/button&gt;&lt;!-- 内联字符串拼接 --&gt;&lt;img :src=&quot;&#x27;/path/to/images/&#x27; + fileName&quot;&gt;
+
+没有参数时，可以绑定到一个包含键值对的对象，该对象内部不能放class和style
+
+&lt;!-- 绑定一个有属性的对象 --&gt;&lt;div v-bind=&quot;&#123; id: someProp, &#x27;other-attr&#x27;: otherProp &#125;&quot;&gt;&lt;/div&gt;
+
+二、绑定class
+对象语法：下面的语法表示 active 这个 class 存在与否将取决于数据属性 isAc ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/19/Vue-vue%E7%9B%B8%E5%85%B3%E6%8C%87%E4%BB%A4/" title="vue相关指令">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue相关指令"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Vue-vue%E7%9B%B8%E5%85%B3%E6%8C%87%E4%BB%A4/" title="vue相关指令">vue相关指令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T14:25:52.000Z" title="发表于 2020-11-19 22:25:52">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-26T01:29:02.189Z" title="更新于 2020-11-26 09:29:02">2020-11-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Vue/">Vue</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Vue-vue%E7%9B%B8%E5%85%B3%E6%8C%87%E4%BB%A4/">Vue-vue相关指令</a></span></div><div class="content">一、vue指令介绍
+具有特殊含义、拥有特殊功能的特性
+
+指令带有v-前缀，表示它们是Vue提供的特殊特性
+
+指令可以直接使用data中的数据
+
+
+二、v-pre
+跳过这个元素和它的子元素的编译过程，可以用来显示原始 Mustache 标签，跳过大量没有指令的节点会加快编译。
+
+&lt;!-- 不会被编译 --&gt;&lt;span v-pre&gt;&#123;&#123; msg &#125;&#125;&lt;/span&gt;
+
+三、v-cloak
+这个指令保持在元素上直到关联实例结束编译
+
+可以解决闪烁的问题
+
+和 CSS 规则如 [v-cloak] &#123; display: none &#125; 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕
+
+
+&lt;style&gt;[v-cloak] &#123;display: none;&#125;&lt;/style&gt;&lt;!-- &#123;&#123; message &#125;&#125;不会显示，直到编译结束 --&gt;&lt;div v-cloak&gt;&#123;& ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/19/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8-%E5%B0%81%E8%A3%85cookie%E6%93%8D%E4%BD%9C%E5%8F%8A%E6%8B%96%E6%8B%BD%E5%BA%94%E7%94%A8/" title="封装cookie操作及拖拽应用">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1605791601797&amp;di=c0079cc3d82f4d21a66b05a293073bb3&amp;imgtype=0&amp;src=http%3A%2F%2Fbdn.135editor.com%2Ffiles%2Fusers%2F452%2F4525904%2F201808%2F69adH456_2euT.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="封装cookie操作及拖拽应用"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8-%E5%B0%81%E8%A3%85cookie%E6%93%8D%E4%BD%9C%E5%8F%8A%E6%8B%96%E6%8B%BD%E5%BA%94%E7%94%A8/" title="封装cookie操作及拖拽应用">封装cookie操作及拖拽应用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T10:18:55.000Z" title="发表于 2020-11-19 18:18:55">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-20T12:17:12.586Z" title="更新于 2020-11-20 20:17:12">2020-11-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8/">本地化存储</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8-cookie%E7%9A%84%E5%B0%81%E8%A3%85%E5%8F%8A%E5%BA%94%E7%94%A8/">本地化存储-cookie的封装及应用</a></span></div><div class="content">
+&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;./index.css&quot;&gt; --&gt;    &lt;style&gt;        #box&#123;            width: 100px;			height: 100px;			position: absolute;			left: 100px;			top: 100px;			background: green;        &#125;    ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/19/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8-cookie/" title="cookie">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1605791601797&amp;di=c0079cc3d82f4d21a66b05a293073bb3&amp;imgtype=0&amp;src=http%3A%2F%2Fbdn.135editor.com%2Ffiles%2Fusers%2F452%2F4525904%2F201808%2F69adH456_2euT.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cookie"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8-cookie/" title="cookie">cookie</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T10:18:25.000Z" title="发表于 2020-11-19 18:18:25">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-20T06:38:21.741Z" title="更新于 2020-11-20 14:38:21">2020-11-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8/">本地化存储</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8-cookie/">本地化存储-cookie</a></span></div><div class="content">一、思考
+为什么有cookie
+
+
+因为要进行长期存储数据
+
+
+为什么要进行长期存储数据
+
+
+cookie运行机制：http协议是上下文无关协议,是无状态协议,对一个地址进行请求.不同的请求之间半毛钱关系都没有 
+
+如:买家在两个页面各选一件产品添加到购物车,添加购物车这个接口是相同的,但是两个请求是无关的,那么是如何将两件产品添加到该用户的购物车呢
+
+
+
+
+在百度搜索登录账号,再打开百度百科、百度知道,发现账号都已经登录了
+
+
+原因在于浏览器里面存储的cookie,domain值是一级域名.baidu.com,在一级域名下的二级域名都可以使用这个cookie
+
+
+
+请求头中携带的cookie
+
+
+二、cookie特性
+cookie不可跨域
+
+cookie存储在浏览器里
+
+cookie有数量和大小的限制
+
+
+
+数量50个左右
+大小4kb左右
+
+
+cookie存储时间非常灵活
+
+cookie不光服务器可以设置，客户端也可以设置
+
+
+
+服务器：set-cookie
+
+客户端：document.cookie
+
+
+
+三、cookie属性
+name：cookie名字(唯一性)
+
+
+
+第一个coo ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="vue响应式原理">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue响应式原理"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/" title="vue响应式原理">vue响应式原理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T02:28:15.000Z" title="发表于 2020-11-19 10:28:15">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-19T15:38:45.091Z" title="更新于 2020-11-19 23:38:45">2020-11-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Vue/">Vue</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86/">Vue-vue响应式原理</a></span></div><div class="content">一、代码// 用data来模拟vue监听的对象const data = &#123;  name: &#x27;shanshan&#x27;,  age: 18,  shan: &#123;    name: &#x27;shanshan&#x27;,    age: 18,    obj: &#123;&#125;  &#125;,  arr: [1, 2, 3]&#125;const arrayProto = Array.prototype;const arrayMethods = Object.create(arrayProto);[&#x27;push&#x27;, &#x27;pop&#x27;, &#x27;shift&#x27;, &#x27;unshift&#x27; ,&#x27;sort&#x27;, &#x27;splice&#x27;, &#x27;reverse&#x27;].forEach(method =&gt; &#123;  arrayMethods[method] = function () &#123;    arrayProto[method]. ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F2/" title="vue响应式2">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2874600425,3077370058&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue响应式2"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/19/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F2/" title="vue响应式2">vue响应式2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-19T02:09:56.000Z" title="发表于 2020-11-19 10:09:56">2020-11-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-25T15:31:32.717Z" title="更新于 2020-11-25 23:31:32">2020-11-25</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Vue/">Vue</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F/">Vue-vue响应式</a></span></div><div class="content">一、更改数据不会渲染页面的情况
 未声明
 
 &lt;!-- 即使更改了数据，也不会重新渲染页面 --&gt;&lt;div id=&quot;app&quot;&gt;&#123;&#123; mrDeng.wife &#125;&#125;&lt;/div&gt;&lt;script&gt;    const vm = new Vue(&#123;        el: &#x27;#app&#x27;,        data: &#123;        mrDeng: &#123;            name: &#x27;邓旭明&#x27;,             age: 80,             height: &#x27;140cm&#x27;,             weight: &#x27;100kg&#x27;        &#125;        &#125;    &#125;)  vm.mrDeng.wife = &#x27;liu&#x27;;&lt;/script&gt;
@@ -145,7 +246,7 @@ var saveToLocal = {
 
 未被渲染
 
-&lt;!-- 即使更改了数据，也不会重新渲染页 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/18/ES5-%E4%BA%8B%E4%BB%B6/%E7%AC%94%E8%AE%B0/" title="无题">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E4%BA%8B%E4%BB%B6/%E7%AC%94%E8%AE%B0/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T15:10:21.948Z" title="发表于 2020-11-18 23:10:21">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-03-21T03:17:11.537Z" title="更新于 2020-03-21 11:17:11">2020-03-21</time></span></div><div class="content">事件何为事件
+&lt;!-- 即使更改了数据，也不会重新渲染页 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/18/ES5-%E4%BA%8B%E4%BB%B6/%E7%AC%94%E8%AE%B0/" title="无题">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E4%BA%8B%E4%BB%B6/%E7%AC%94%E8%AE%B0/" title="无题">无题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T15:10:21.948Z" title="发表于 2020-11-18 23:10:21">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-03-21T03:17:11.537Z" title="更新于 2020-03-21 11:17:11">2020-03-21</time></span></div><div class="content">事件何为事件
 说白了就是一个动作，与用户实现交互功能，你动一下，他会给你一个反馈
  div.onclick = function()&#123;&#125;
  div.onclick就是一个事件，后面的函数是响应
@@ -177,7 +278,7 @@ fn：处理函数
 
 ele.attachEvent(‘on’ + type, fn);
 
-IE独有，一个事件同样可以绑定多个处理程序，但是如 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/" title="习题">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="习题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/" title="习题">习题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:03:04.000Z" title="发表于 2020-11-18 16:03:04">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T06:40:18.388Z" title="更新于 2020-11-22 14:40:18">2020-11-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E4%B9%A0%E9%A2%98/">ES5-习题</a></span></div><div class="content">
+IE独有，一个事件同样可以绑定多个处理程序，但是如 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/" title="习题">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="习题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E4%B9%A0%E9%A2%98/" title="习题">习题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:03:04.000Z" title="发表于 2020-11-18 16:03:04">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T06:40:18.388Z" title="更新于 2020-11-22 14:40:18">2020-11-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E4%B9%A0%E9%A2%98/">ES5-习题</a></span></div><div class="content">
 题1
 
 
@@ -229,7 +330,7 @@ console.log(test.sign):系统生成对象new String(“string”);访问对象�
 原因：
 
 
-GO：&#123;    x:und ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/18/ES5-%E5%85%B6%E4%BB%96/" title="其他">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="其他"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E5%85%B6%E4%BB%96/" title="其他">其他</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:03:03.000Z" title="发表于 2020-11-18 16:03:03">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T08:45:09.187Z" title="更新于 2020-11-22 16:45:09">2020-11-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E5%85%B6%E4%BB%96/">ES5-其他</a></span></div><div class="content">
+GO：&#123;    x:und ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/18/ES5-%E5%85%B6%E4%BB%96/" title="其他">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="其他"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E5%85%B6%E4%BB%96/" title="其他">其他</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:03:03.000Z" title="发表于 2020-11-18 16:03:03">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T08:45:09.187Z" title="更新于 2020-11-22 16:45:09">2020-11-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E5%85%B6%E4%BB%96/">ES5-其他</a></span></div><div class="content">
 123.toString();能输出吗？
 
 
@@ -251,169 +352,10 @@ var num = 123; num.toString()输出结果?
 由问题2可以推出问题3应该输出[object Number]，为什么问题2结果是”123”？
 
 
-num.toString();由于num是一个原始值，不能有方法，所以得经过包装类包装，即new Number(num).toString();，这个toString()方法是函数Number()的原型Number.prototype的，那么问题来了，问题2说toString()来源于原型链的终端，为什么toString()又来自于Numb ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/18/ES5-JS%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF/" title="异步加载与时间线">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="异步加载与时间线"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-JS%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF/" title="异步加载与时间线">异步加载与时间线</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:03:02.000Z" title="发表于 2020-11-18 16:03:02">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-22T08:44:36.789Z" title="更新于 2020-11-22 16:44:36">2020-11-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-JS%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF/">ES5-JS异步加载与时间线</a></span></div><div class="content">一、异步加载JS
-js加载的缺点
-
-
-JS加载会阻塞后续页面，但是有时候加载工具方法没必要阻塞文档，过多js加载会影响页面效率，一旦网速不好，那么整个网站将等待js加载而不进行后续渲染等工作
-
-
-javascript异步加载的三种方案
-
-
-defer：等到dom文档全部解析（dom树完全生成）完才会被执行，可以将JS写到标签内部，只有IE能用。
-
-async：加载完就执行，async只能加载外部脚本，不能把js写在script标签里
-
-
-
-创建script，插入到DOM中，加载完毕后callBack(实现异步加载，按需加载)
-
-
-
-将上面两种方法封装成函数
-
-
-二、JS加载时间线
-创建Document对象，开始解析web页面。这个阶段document.readyState = ‘loading’。
-
-遇到link外部css，创建线程加载，并继续解析文档。
-
-遇到script外部js，并且没有设置async、defer，浏览器加载，并阻塞，等待js加载完成并执行该脚本，然后继续解析文档。
-
-遇到script外部js，并且设置有async、defer，浏览器创建线程加载，并继续解析文档。对 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/18/ES5-%E4%BA%8B%E4%BB%B6/" title="事件">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="事件"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E4%BA%8B%E4%BB%B6/" title="事件">事件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:02:42.000Z" title="发表于 2020-11-18 16:02:42">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-19T16:23:36.311Z" title="更新于 2020-11-20 00:23:36">2020-11-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E4%BA%8B%E4%BB%B6/">ES5-事件</a></span></div><div class="content">一、如何绑定事件
-ele.onxxx = function (event) &#123;&#125;
-
-
-兼容性很好，但是一个元素只能绑定一个处理程序
-
-
-ele.addEventListener(type, fn, false);
-
-
-IE9以下不兼容，可以为一个事件绑定多个处理程序，触发之后会按照绑定顺序依次触发
-
-
-
-两个函数长得一样，但函数是引用值，本质上是不同的，所以执行两次，图二是同一个函数，所以只执行一次
-
-
-
-
-ele.attachEvent(‘on’ + type, fn);
-
-
-IE独有，一个事件同样可以绑定多个处理程序，但是如果同一个函数绑定多次，它也会执行多次
-
-二、事件处理程序的运行环境
-ele.onxxx = function (event) &#123;&#125;:程序this指向是dom元素本身
-
-obj.addEventListener(type, fn, false);:程序this指向是dom元素本身
-
-obj.attachEvent(‘on’ + type, fn);程序this指向window
-
-封装兼容性的 addEvent(elem, t ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/18/ES5-%E8%84%9A%E6%9C%AC%E5%8C%96CSS/" title="脚本化CSS">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="脚本化CSS"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E8%84%9A%E6%9C%AC%E5%8C%96CSS/" title="脚本化CSS">脚本化CSS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:02:03.000Z" title="发表于 2020-11-18 16:02:03">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-19T15:59:36.827Z" title="更新于 2020-11-19 23:59:36">2020-11-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E8%84%9A%E6%9C%AC%E5%8C%96CSS/">ES5-脚本化CSS</a></span></div><div class="content">一、dom.style.prop
-只有.style可以写入值
-
-可读写行间（内联）样式，看不到内部样式表里的CSS属性，没有兼容性问题，碰到float这样的关键字属性，前面应加csseg:float — &gt; cssFloat
-
-复合（速写）属性必须拆解，组合单词变成小驼峰式写法
-
-写入的值必须是字符串格式
-
-
-二、查询计算样式(IE8 及 IE8以下不兼容)
-window.getComputedStyle(element,null);计算样式只读
-
-返回的计算样式的值都是绝对值，没有相对单位，将em，百分号等转化成像素值
-
-参数null： 获取伪元素选择器的内容，但是不能写入
-
-
-
-三、查询样式(IE独有的属性)
-element.currentStyle:计算样式只读，返回的是计算之后的属性值
-
-返回的计算样式的值不是经过转换的绝对值，你写em他就是em
-
-封装兼容性方法
-
-
-
-四、如何用伪元素选择器改变方块颜色？
-这是一种编程思想，改变状态位，但是平时开发不怎么用
-
-
-
-五、开发中经常将另外一个状态写到一个类里，然后在事件里改变dom元素的类选择器。
-优点：效率更高（例div. ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/18/ES5-%E8%8E%B7%E5%8F%96dom%E5%B0%BA%E5%AF%B8/" title="获取dom尺寸">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="获取dom尺寸"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E8%8E%B7%E5%8F%96dom%E5%B0%BA%E5%AF%B8/" title="获取dom尺寸">获取dom尺寸</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:01:44.000Z" title="发表于 2020-11-18 16:01:44">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-18T15:16:17.972Z" title="更新于 2020-11-18 23:16:17">2020-11-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E8%8E%B7%E5%8F%96dom%E5%B0%BA%E5%AF%B8/">ES5-获取dom尺寸</a></span></div><div class="content">一、查看元素的几何尺寸
-domEle.getBoundingClientRect();es5新方法，任何dom元素都可以调用，边框盒的大小
-
-兼容性很好
-
-该方法返回一个对象，对象里面有left,top,right,bottom等属性。left和top代表该元素左上角的X和Y坐标，right和bottom代表元素右下角的X和Y坐标
-
-height和width属性老版本IE并未实现
-
-返回的结果并不是“实时的”
-
-
-二、查看元素的尺寸
-dom.offsetWidth，dom.offsetHeight 任何dom元素都可以调用，边框盒的大小
-
-三、查看元素的位置
-dom.offsetLeft, dom.offsetTop
-
-对于无定位父级的元素，返回相对文档的坐标。对于有定位父级的元素，返回相对于最近的有定位的父级的坐标，不考虑自身。(无论是left 还是margin-left等都是距离。 )
-
-dom.offsetParent
-
-返回最近的有定位的父级，如无，返回body, body.offsetParent 返回null
-
-eg：求元素相对于文档的坐标 getElementPositi ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/18/ES5-%E5%A5%BD%E8%8E%B7%E5%8F%96%E7%AA%97%E5%8F%A3%E5%B1%9E%E6%80%A7/" title="获取窗口属性">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="获取窗口属性"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/18/ES5-%E5%A5%BD%E8%8E%B7%E5%8F%96%E7%AA%97%E5%8F%A3%E5%B1%9E%E6%80%A7/" title="获取窗口属性">获取窗口属性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-18T08:01:05.000Z" title="发表于 2020-11-18 16:01:05">2020-11-18</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-18T15:13:25.063Z" title="更新于 2020-11-18 23:13:25">2020-11-18</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/ES5-%E8%8E%B7%E5%8F%96%E7%AA%97%E5%8F%A3%E5%B1%9E%E6%80%A7/">ES5-获取窗口属性</a></span></div><div class="content">一、查看滚动条的滚动距离
-window.pageXOffset/pageYOffset  IE8及11IE8以下不兼容
-
-document.body/document.documentElement.scrollLeft/scrollTop
-
-
-
-IE8及IE8以下能用
-
-但是会出现兼容性混乱问题，具体哪个浏览器可以用document.body哪个浏览器可以用documentElement是没有定论的
-
-但是当用其中一个方法时，另一种方法值一定为0，所以用时取两个值相加，因为不可能存在两个同时有值。
-
-
-
-封装兼容性方法，求滚动轮滚动距离getScrollOffset()
-
-
-二、查看视口的尺寸
-window.innerWidth/innerHeight
-
-
-IE8及IE8以下不兼容
-
-加上滚动条宽度/高度
-
-
-
-document.documentElement.clientWidth/clientHeight
-
-
-标准模式下，任意浏览器都兼容
-
-
-document.body.clientWidth/clientHeight
-
-
-适用于怪异模式下的浏览器
-
-
-eg：封装兼容性方法，返回 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/6/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/8/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wu Hao</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">233</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">224</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wuhao0509"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS2/"><span class="card-category-list-name">CSS2</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES5/"><span class="card-category-list-name">ES5</span><span class="card-category-list-count">48</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES6/"><span class="card-category-list-name">ES6</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML4/"><span class="card-category-list-name">HTML4</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML5/"><span class="card-category-list-name">HTML5</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/React/"><span class="card-category-list-name">React</span><span class="card-category-list-count">15</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jQuery/"><span class="card-category-list-name">jQuery</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/node/"><span class="card-category-list-name">node</span><span class="card-category-list-count">18</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">微信小程序</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">29</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8/"><span class="card-category-list-name">本地化存储</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/"><span class="card-category-list-name">模块化</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/"><span class="card-category-list-name">网络</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/"><span class="card-category-list-name">项目报告</span><span class="card-category-list-count">2</span></a></li>
+num.toString();由于num是一个原始值，不能有方法，所以得经过包装类包装，即new Number(num).toString();，这个toString()方法是函数Number()的原型Number.prototype的，那么问题来了，问题2说toString()来源于原型链的终端，为什么toString()又来自于Numb ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/6/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/8/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wu Hao</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">238</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">229</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">16</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wuhao0509"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS2/"><span class="card-category-list-name">CSS2</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES5/"><span class="card-category-list-name">ES5</span><span class="card-category-list-count">48</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES6/"><span class="card-category-list-name">ES6</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML4/"><span class="card-category-list-name">HTML4</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML5/"><span class="card-category-list-name">HTML5</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/React/"><span class="card-category-list-name">React</span><span class="card-category-list-count">15</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TypeScript/"><span class="card-category-list-name">TypeScript</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jQuery/"><span class="card-category-list-name">jQuery</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/node/"><span class="card-category-list-name">node</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">微信小程序</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">29</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8/"><span class="card-category-list-name">本地化存储</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/"><span class="card-category-list-name">模块化</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/"><span class="card-category-list-name">网络</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/"><span class="card-category-list-name">项目报告</span><span class="card-category-list-count">2</span></a></li>
             
-            </ul></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">16</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">139</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">55</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">23</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">233</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-16T11:05:48.967Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+            </ul></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">21</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">139</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">55</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">23</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">238</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-16T15:51:56.534Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")

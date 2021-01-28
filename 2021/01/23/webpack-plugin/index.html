@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>plugin | Wu Hao's Blog</title><meta name="keywords" content="webpack-plugin"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="plugin loader的功能定位是转换代码，而一些其他的操作难以使用loader完成，比如：  当webpack生成文件时，顺便多生成一个说明描述文件  当webpack编译启动时，控制台输出一句话表示webpack启动了  当xxxx时，xxxx    这种类似的功能需要把功能嵌入到webpack的编译流程中，而这种事情的实现是依托于plugin的    plugin的本质是一个带有appl">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>plugin | Wu Hao's Blog</title><meta name="keywords" content="webpack-plugin"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、什么事loader做不了 loader的功能定位是转换代码，而一些其他的操作难以使用loader完成，比如：   当webpack生成文件时，顺便多生成一个说明描述文件  当webpack编译启动时，控制台输出一句话表示webpack启动了  当xxxx时，xxxx就需要plugin   二、plugin 这种类似的功能需要把功能嵌入到webpack的编译流程中，而这种事情的实现是依托于plu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="plugin">
 <meta property="og:url" content="http://example.com/2021/01/23/webpack-plugin/index.html">
 <meta property="og:site_name" content="Wu Hao&#39;s Blog">
-<meta property="og:description" content="plugin loader的功能定位是转换代码，而一些其他的操作难以使用loader完成，比如：  当webpack生成文件时，顺便多生成一个说明描述文件  当webpack编译启动时，控制台输出一句话表示webpack启动了  当xxxx时，xxxx    这种类似的功能需要把功能嵌入到webpack的编译流程中，而这种事情的实现是依托于plugin的    plugin的本质是一个带有appl">
+<meta property="og:description" content="一、什么事loader做不了 loader的功能定位是转换代码，而一些其他的操作难以使用loader完成，比如：   当webpack生成文件时，顺便多生成一个说明描述文件  当webpack编译启动时，控制台输出一句话表示webpack启动了  当xxxx时，xxxx就需要plugin   二、plugin 这种类似的功能需要把功能嵌入到webpack的编译流程中，而这种事情的实现是依托于plu">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&fm=15&gp=0.jpg">
 <meta property="article:published_time" content="2021-01-23T01:43:34.000Z">
-<meta property="article:modified_time" content="2021-01-25T10:05:22.108Z">
+<meta property="article:modified_time" content="2021-01-26T01:44:20.611Z">
 <meta property="article:author" content="Wu Hao">
 <meta property="article:tag" content="webpack-plugin">
 <meta name="twitter:card" content="summary">
@@ -80,7 +80,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: true,
   isSidebar: true,
-  postUpdate: '2021-01-25 18:05:22'
+  postUpdate: '2021-01-26 09:44:20'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,57 +142,60 @@ var saveToLocal = {
     if (t === 'dark') activateDarkMode()
     else if (t === 'light') activateLightMode()
   }
-})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">264</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">255</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#plugin"><span class="toc-number">1.</span> <span class="toc-text">plugin</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">plugin</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:43:34.000Z" title="发表于 2021-01-23 09:43:34">2021-01-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-25T10:05:22.108Z" title="更新于 2021-01-25 18:05:22">2021-01-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/">webpack</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="plugin"><a href="#plugin" class="headerlink" title="plugin"></a>plugin</h1><ol>
-<li><p>loader的功能定位是转换代码，而一些其他的操作难以使用loader完成，比如：</p>
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">276</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">264</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E4%BA%8Bloader%E5%81%9A%E4%B8%8D%E4%BA%86"><span class="toc-number">1.</span> <span class="toc-text">一、什么事loader做不了</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81plugin"><span class="toc-number">2.</span> <span class="toc-text">二、plugin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81plugin%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">三、plugin运行原理</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">plugin</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:43:34.000Z" title="发表于 2021-01-23 09:43:34">2021-01-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-26T01:44:20.611Z" title="更新于 2021-01-26 09:44:20">2021-01-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/">webpack</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、什么事loader做不了"><a href="#一、什么事loader做不了" class="headerlink" title="一、什么事loader做不了"></a>一、什么事loader做不了</h2><ol>
+<li>loader的功能定位是转换代码，而一些其他的操作难以使用loader完成，比如：</li>
+</ol>
 <ul>
 <li><p>当webpack生成文件时，顺便多生成一个说明描述文件</p>
 </li>
 <li><p>当webpack编译启动时，控制台输出一句话表示webpack启动了</p>
 </li>
-<li><p>当xxxx时，xxxx</p>
+<li><p>当xxxx时，xxxx就需要plugin</p>
 </li>
 </ul>
-</li>
-<li><p>这种类似的功能需要把功能嵌入到webpack的编译流程中，而这种事情的实现是依托于plugin的</p>
-<p> <img src="assets/2020-01-15-12-45-16.png"></p>
-</li>
-<li><p>plugin的<strong>本质</strong>是一个带有apply方法的对象</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> plugin = &#123;</span><br><span class="line">    apply: <span class="function"><span class="keyword">function</span>(<span class="params">compiler</span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二、plugin"><a href="#二、plugin" class="headerlink" title="二、plugin"></a>二、plugin</h2><ol>
+<li>这种类似的功能需要把功能嵌入到webpack的编译流程中，而这种事情的实现是依托于plugin的，说白了就是注册事件的，下图中的红点就是事件的触发点</li>
+</ol>
+<p><img src="2020-01-15-12-45-16.png"></p>
+<ol start="2">
+<li>plugin的<strong>本质</strong>是一个带有apply方法的对象</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> plugin = &#123;</span><br><span class="line">    apply: <span class="function"><span class="keyword">function</span>(<span class="params">compiler</span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 通常，习惯上，我们会将该对象写成构造函数的模式</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyPlugin</span></span>&#123;</span><br><span class="line">    apply(compiler)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> plugin = <span class="keyword">new</span> MyPlugin();</span><br></pre></td></tr></table></figure>
 
-<p> 通常，习惯上，我们会将该对象写成构造函数的模式</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyPlugin</span></span>&#123;</span><br><span class="line">    apply(compiler)&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> plugin = <span class="keyword">new</span> MyPlugin();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>要将插件应用到webpack，需要把插件对象配置到webpack的plugins数组中，如下：</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> MyPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>apply函数会在初始化阶段，创建好Compiler对象后运行。</p>
+<ol start="3">
+<li>要将插件应用到webpack，需要把插件对象配置到webpack的plugins数组中</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    plugins:[</span><br><span class="line">        <span class="keyword">new</span> MyPlugin()</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、plugin运行原理"><a href="#三、plugin运行原理" class="headerlink" title="三、plugin运行原理"></a>三、plugin运行原理</h2><ol>
+<li>apply函数会在初始化阶段，创建好Compiler对象后运行。</li>
+</ol>
 <ul>
 <li><p>compiler对象是在初始化阶段构建的，整个webpack打包期间只有一个compiler对象，后续完成打包工作的是compiler对象内部创建的compilation</p>
 </li>
 <li><p>apply方法会在<strong>创建好compiler对象后调用</strong>，并向方法传入一个compiler对象</p>
-<p><img src="assets/2020-01-15-12-49-26.png"></p>
 </li>
 </ul>
-</li>
-<li><p>compiler对象提供了大量的钩子函数（hooks，可以理解为事件），plugin的开发者可以注册这些钩子函数，参与webpack编译和生成。</p>
+<p><img src="2020-01-15-12-49-26.png"></p>
+<ol start="6">
+<li>compiler对象提供了大量的钩子函数（hooks，可以理解为事件），plugin的开发者可以注册这些钩子函数，参与webpack编译和生成。</li>
+</ol>
 <ul>
-<li><p>你可以在apply方法中使用下面的代码注册钩子函数:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyPlugin</span></span>&#123;</span><br><span class="line">    apply(compiler)&#123;</span><br><span class="line">        compiler.hooks.事件名称.事件类型(name, <span class="function"><span class="keyword">function</span>(<span class="params">compilation</span>)</span>&#123;</span><br><span class="line">            <span class="comment">//事件处理函数</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>你可以在apply方法中使用下面的代码注册钩子函数:</li>
 </ul>
-<p> <strong>事件名称</strong></p>
-<p> 即要监听的事件名，即钩子名，所有的钩子：<a target="_blank" rel="noopener" href="https://www.webpackjs.com/api/compiler-hooks">https://www.webpackjs.com/api/compiler-hooks</a></p>
-<p> <strong>事件类型</strong></p>
-<p> 这一部分使用的是 Tapable API，这个小型的库是一个专门用于钩子函数监听的库。</p>
-<p> 它提供了一些事件类型：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyPlugin</span></span>&#123;</span><br><span class="line">    apply(compiler)&#123;</span><br><span class="line">        compiler.hooks.事件名称.事件类型(name, <span class="function"><span class="keyword">function</span>(<span class="params">compilation</span>)</span>&#123;</span><br><span class="line">            <span class="comment">//事件处理函数</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>事件名称</strong></p>
+<p>即要监听的事件名，即钩子名，所有的钩子：<a target="_blank" rel="noopener" href="https://www.webpackjs.com/api/compiler-hooks">https://www.webpackjs.com/api/compiler-hooks</a></p>
+<p><strong>事件类型</strong></p>
+<p>这一部分使用的是 Tapable API，这个小型的库是一个专门用于钩子函数监听的库。</p>
+<p>它提供了一些事件类型：</p>
 <ul>
 <li>tap：注册一个同步的钩子函数，函数运行完毕则表示事件处理结束</li>
 <li>tapAsync：注册一个基于回调的异步的钩子函数，函数通过调用一个回调表示事件处理结束</li>
 <li>tapPromise：注册一个基于Promise的异步的钩子函数，函数通过返回的Promise进入已决状态表示事件处理结束</li>
 </ul>
-<p> <strong>处理函数</strong><br> 处理函数有一个事件参数<code>compilation</code></p>
-</li>
-</ol>
+<p><strong>处理函数</strong><br>处理函数有一个事件参数<code>compilation</code></p>
 </div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:303459939@qq.com">Wu Hao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/01/23/webpack-plugin/">http://example.com/2021/01/23/webpack-plugin/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Wu Hao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/webpack-plugin/">webpack-plugin</a></div><div class="post_share"><div class="social-share" data-image="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/01/23/webpack-%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE%E7%BB%86%E8%8A%82/"><img class="prev-cover" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">其他配置细节</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/23/webpack-loader/"><img class="next-cover" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">loader</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';

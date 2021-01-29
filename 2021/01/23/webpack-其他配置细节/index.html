@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&fm=15&gp=0.jpg">
 <meta property="article:published_time" content="2021-01-23T01:44:33.000Z">
-<meta property="article:modified_time" content="2021-01-26T07:18:51.457Z">
+<meta property="article:modified_time" content="2021-01-29T14:20:09.698Z">
 <meta property="article:author" content="Wu Hao">
 <meta property="article:tag" content="webpack-其他配置细节">
 <meta name="twitter:card" content="summary">
@@ -80,7 +80,7 @@ var saveToLocal = {
   isHome: false,
   isHighlightShrink: true,
   isSidebar: true,
-  postUpdate: '2021-01-26 15:18:51'
+  postUpdate: '2021-01-29 22:20:09'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -142,7 +142,7 @@ var saveToLocal = {
     if (t === 'dark') activateDarkMode()
     else if (t === 'light') activateLightMode()
   }
-})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">276</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">264</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81context"><span class="toc-number">1.</span> <span class="toc-text">一、context</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81output"><span class="toc-number">2.</span> <span class="toc-text">二、output</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-library"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 library</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-libraryTarget"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 libraryTarget</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81target"><span class="toc-number">3.</span> <span class="toc-text">三、target</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81module-noParse"><span class="toc-number">4.</span> <span class="toc-text">四、module.noParse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81resolve"><span class="toc-number">5.</span> <span class="toc-text">五、resolve</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-modules"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 modules</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-extensions"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 extensions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-alias"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 alias</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81externals"><span class="toc-number">6.</span> <span class="toc-text">六、externals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81stats"><span class="toc-number">7.</span> <span class="toc-text">七、stats</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">其他配置细节</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:44:33.000Z" title="发表于 2021-01-23 09:44:33">2021-01-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-26T07:18:51.457Z" title="更新于 2021-01-26 15:18:51">2021-01-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/">webpack</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、context"><a href="#一、context" class="headerlink" title="一、context"></a>一、context</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">context: path.resolve(__dirname, <span class="string">&quot;app&quot;</span>)</span><br></pre></td></tr></table></figure>
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">280</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">271</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81context"><span class="toc-number">1.</span> <span class="toc-text">一、context</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81output"><span class="toc-number">2.</span> <span class="toc-text">二、output</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-library"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 library</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-libraryTarget"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 libraryTarget</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81target"><span class="toc-number">3.</span> <span class="toc-text">三、target</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81module-noParse"><span class="toc-number">4.</span> <span class="toc-text">四、module.noParse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81resolve"><span class="toc-number">5.</span> <span class="toc-text">五、resolve</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-modules"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 modules</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-extensions"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 extensions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-alias"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 alias</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81externals"><span class="toc-number">6.</span> <span class="toc-text">六、externals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81stats"><span class="toc-number">7.</span> <span class="toc-text">七、stats</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">其他配置细节</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:44:33.000Z" title="发表于 2021-01-23 09:44:33">2021-01-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-29T14:20:09.698Z" title="更新于 2021-01-29 22:20:09">2021-01-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/">webpack</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、context"><a href="#一、context" class="headerlink" title="一、context"></a>一、context</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">context: path.resolve(__dirname, <span class="string">&quot;app&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>该配置会影响入口和loaders的解析，入口和loaders的相对路径会以context的配置作为基准路径，这样，你的配置会独立于CWD（current working directory 当前执行路径）</li>
@@ -160,6 +160,8 @@ var saveToLocal = {
 <li><p>该配置可以更加精细的控制如何暴露入口包的导出结果</p>
 </li>
 <li><p>其他可用的值有：</p>
+</li>
+</ol>
 <ul>
 <li>var：默认值，暴露给一个普通变量</li>
 <li>window：暴露给window对象的一个属性</li>
@@ -168,31 +170,28 @@ var saveToLocal = {
 <li>commonjs：暴露给exports的一个属性</li>
 <li>其他：<a target="_blank" rel="noopener" href="https://www.webpackjs.com/">https://www.webpackjs.com/</a>  configuration/output/#output-librarytarget</li>
 </ul>
-</li>
-</ol>
 <h2 id="三、target"><a href="#三、target" class="headerlink" title="三、target"></a>三、target</h2><blockquote>
 <p>target:”web” //默认值</p>
 </blockquote>
 <ol>
-<li><p>设置打包结果最终要运行的环境，常用值有</p>
+<li>设置打包结果最终要运行的环境，常用值有</li>
+</ol>
 <ul>
 <li>web: 打包后的代码运行在web环境中</li>
 <li>node：打包后的代码运行在node环境中</li>
 <li>其他：<a target="_blank" rel="noopener" href="https://www.webpackjs.com/configuration/target/">https://www.webpackjs.com/configuration/target/</a></li>
 </ul>
-</li>
-</ol>
 <h2 id="四、module-noParse"><a href="#四、module-noParse" class="headerlink" title="四、module.noParse"></a>四、module.noParse</h2><blockquote>
 <p>noParse: /jquery/</p>
 </blockquote>
 <ol>
-<li><p><strong>不解析</strong>正则表达式匹配的模块，通常用它来忽略那些<strong>大型的单模块</strong>库，以提高<strong>构建性能</strong></p>
+<li><strong>不解析</strong>正则表达式匹配的模块，通常用它来忽略那些<strong>大型的单模块</strong>库，以提高<strong>构建性能</strong></li>
+</ol>
 <ul>
 <li>大型单模块库：文件太大，抽象语法树分析太慢，所以不需要分析依赖，否则影响打包速率</li>
 </ul>
-</li>
-<li><p>noParse只提高打包速率 对运行没有任何影响</p>
-</li>
+<ol start="2">
+<li>noParse只提高打包速率 对运行没有任何影响</li>
 </ol>
 <h2 id="五、resolve"><a href="#五、resolve" class="headerlink" title="五、resolve"></a>五、resolve</h2><ol>
 <li>resolve的相关配置主要用于控制模块解析过程</li>
@@ -201,14 +200,13 @@ var saveToLocal = {
 <p>modules: [“node_modules”]  //默认值</p>
 </blockquote>
 <ol>
-<li><p>当解析模块时，如果遇到导入语句，<code>require(&quot;test&quot;)</code>，webpack会从下面的位置寻找依赖的模块</p>
+<li>当解析模块时，如果遇到导入语句，<code>require(&quot;test&quot;)</code>，webpack会从下面的位置寻找依赖的模块</li>
+</ol>
 <ul>
 <li>当前目录下的<code>node_modules</code>目录</li>
 <li>上级目录下的<code>node_modules</code>目录</li>
 <li>…</li>
 </ul>
-</li>
-</ol>
 <h3 id="5-2-extensions"><a href="#5-2-extensions" class="headerlink" title="5.2 extensions"></a>5.2 extensions</h3><blockquote>
 <p>extensions: [“.js”, “.json”]  //默认值</p>
 </blockquote>
@@ -220,15 +218,14 @@ var saveToLocal = {
 <li>test.json</li>
 </ul>
 <ol start="2">
-<li><p>引入模块时用require(‘./a’)，为什么没写后缀名仍然可以找到a.js</p>
+<li>引入模块时用require(‘./a’)，为什么没写后缀名仍然可以找到a.js</li>
+</ol>
 <ul>
 <li><p>错误答案：因为node会自动补全后缀名（原因：代码不会运行）</p>
 </li>
 <li><p>正确答案：因为webpack会根据extensions的配置自动补全后缀名</p>
 </li>
 </ul>
-</li>
-</ol>
 <h3 id="5-3-alias"><a href="#5-3-alias" class="headerlink" title="5.3 alias"></a>5.3 alias</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">alias: &#123;</span><br><span class="line">  <span class="string">&quot;@&quot;</span>: path.resolve(__dirname, <span class="string">&#x27;src&#x27;</span>),</span><br><span class="line">  <span class="string">&quot;_&quot;</span>: __dirname</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol>
@@ -244,13 +241,17 @@ var saveToLocal = {
 </ol>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;jquery&quot;</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">&quot;lodash&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<p>生成的bundle是：</p>
+<ol start="2">
+<li>生成的bundle是：</li>
+</ol>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)(&#123;</span><br><span class="line">    <span class="string">&quot;./src/index.js&quot;</span>: <span class="function"><span class="keyword">function</span>(<span class="params">module, exports, __webpack_require__</span>)</span>&#123;</span><br><span class="line">        __webpack_require__(<span class="string">&quot;jquery&quot;</span>)</span><br><span class="line">        __webpack_require__(<span class="string">&quot;lodash&quot;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;jquery&quot;</span>: <span class="function"><span class="keyword">function</span>(<span class="params">module, exports</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//jquery的大量源码</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;lodash&quot;</span>: <span class="function"><span class="keyword">function</span>(<span class="params">module, exports</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//lodash的大量源码</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>但有了上面的配置后，则变成了</p>
+<ol start="3">
+<li>但有了上面的配置后，则变成了</li>
+</ol>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)(&#123;</span><br><span class="line">    <span class="string">&quot;./src/index.js&quot;</span>: <span class="function"><span class="keyword">function</span>(<span class="params">module, exports, __webpack_require__</span>)</span>&#123;</span><br><span class="line">        __webpack_require__(<span class="string">&quot;jquery&quot;</span>)</span><br><span class="line">        __webpack_require__(<span class="string">&quot;lodash&quot;</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;jquery&quot;</span>: <span class="function"><span class="keyword">function</span>(<span class="params">module, exports</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">module</span>.exports = $;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;lodash&quot;</span>: <span class="function"><span class="keyword">function</span>(<span class="params">module, exports</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">module</span>.exports = _;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
+<ol start="4">
 <li>这比较适用于一些第三方库来自于外部CDN的情况，这样一来，即可以在页面中使用CDN(引入了jQuery lodash等包)，又让bundle的体积变得更小，还不影响源码的编写</li>
 </ol>
 <h2 id="七、stats"><a href="#七、stats" class="headerlink" title="七、stats"></a>七、stats</h2><ol>

@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>tree-shaking | Wu Hao's Blog</title><meta name="keywords" content="webpack-tree-shaking"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="一、tree shaking介绍 压缩可以移除模块内部的无效代码 tree shaking可以移除模块之间的无效代码   二、背景 某些模块导出的代码并不一定会被用到  &#x2F;&#x2F; myMath.jsexport function add(a, b)&amp;#123;  console.log(&quot;add&quot;)  return a+b;&amp;#125;export function sub(a,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tree-shaking">
+<meta property="og:url" content="http://example.com/2021/01/31/webpack-tree-shaking/index.html">
+<meta property="og:site_name" content="Wu Hao&#39;s Blog">
+<meta property="og:description" content="一、tree shaking介绍 压缩可以移除模块内部的无效代码 tree shaking可以移除模块之间的无效代码   二、背景 某些模块导出的代码并不一定会被用到  &#x2F;&#x2F; myMath.jsexport function add(a, b)&amp;#123;  console.log(&quot;add&quot;)  return a+b;&amp;#125;export function sub(a,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&fm=15&gp=0.jpg">
+<meta property="article:published_time" content="2021-01-31T04:35:35.000Z">
+<meta property="article:modified_time" content="2021-02-01T10:15:07.298Z">
+<meta property="article:author" content="Wu Hao">
+<meta property="article:tag" content="webpack-tree-shaking">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&fm=15&gp=0.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2021/01/31/webpack-tree-shaking/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wu Hao","link":"链接: ","source":"来源: Wu Hao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isSidebar: true,
+  postUpdate: '2021-02-01 18:15:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">294</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">285</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81tree-shaking%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">一、tree shaking介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%83%8C%E6%99%AF"><span class="toc-number">2.</span> <span class="toc-text">二、背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">三、使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8E%9F%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">四、原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93"><span class="toc-number">5.</span> <span class="toc-text">五、使用第三方库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%88%86%E6%9E%90"><span class="toc-number">6.</span> <span class="toc-text">六、作用域分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%89%AF%E4%BD%9C%E7%94%A8%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">七、副作用问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81css-tree-shaking"><span class="toc-number">8.</span> <span class="toc-text">八、css tree shaking</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">tree-shaking</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-31T04:35:35.000Z" title="发表于 2021-01-31 12:35:35">2021-01-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-01T10:15:07.298Z" title="更新于 2021-02-01 18:15:07">2021-02-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/">webpack</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="一、tree-shaking介绍"><a href="#一、tree-shaking介绍" class="headerlink" title="一、tree shaking介绍"></a>一、tree shaking介绍</h2><ol>
+<li>压缩可以移除模块内部的无效代码</li>
+<li>tree shaking可以移除模块之间的无效代码</li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/1/4/160bfdcf2a31ce4a?imageslim"></p>
+<h2 id="二、背景"><a href="#二、背景" class="headerlink" title="二、背景"></a>二、背景</h2><ol>
+<li>某些模块导出的代码并不一定会被用到</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// myMath.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;add&quot;</span>)</span><br><span class="line">  <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;sub&quot;</span>)</span><br><span class="line">  <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;add&#125; <span class="keyword">from</span> <span class="string">&quot;./myMath&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(add(<span class="number">1</span>,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>tree shaking 用于移除掉不会用到的导出</li>
+</ol>
+<h2 id="三、使用"><a href="#三、使用" class="headerlink" title="三、使用"></a>三、使用</h2><ol>
+<li><code>webpack2</code>开始就支持了<code>tree shaking</code>，只要是生产环境，<code>tree shaking</code>自动开启</li>
+</ol>
+<h2 id="四、原理"><a href="#四、原理" class="headerlink" title="四、原理"></a>四、原理</h2><ol>
+<li><p>webpack会从入口模块出发寻找依赖关系，当解析一个模块时，webpack会根据ES6的模块导入语句来判断，该模块依赖了另一个模块的哪个导出</p>
+</li>
+<li><p>webpack之所以选择ES6的模块导入语句，是因为ES6模块有以下特点，这些特征都非常有利于分析出稳定的依赖</p>
+</li>
+</ol>
+<ul>
+<li><p>导入导出语句只能是顶层语句</p>
+</li>
+<li><p>import的模块名只能是字符串常量</p>
+</li>
+<li><p>import绑定的变量是不可变的</p>
+</li>
+</ul>
+<ol start="3">
+<li><p>在具体分析依赖时，webpack坚持的原则是：<strong>保证代码正常运行，然后再尽量tree shaking</strong></p>
+</li>
+<li><p>所以，如果你依赖的是一个导出的对象，由于JS语言的动态特性，以及<code>webpack</code>还不够智能，为了保证代码正常运行，它不会移除对象中的任何信息</p>
+</li>
+<li><p>因此，我们在编写代码的时候，<strong>尽量</strong></p>
+</li>
+</ol>
+<ul>
+<li>使用<code>export xxx</code>导出，而不使用<code>export default &#123;xxx&#125;</code>导出</li>
+<li>使用<code>import &#123;xxx&#125; from &quot;xxx&quot;</code>导入，而不使用<code>import xxx from &quot;xxx&quot;</code>导入</li>
+</ul>
+<ol start="6">
+<li><p>依赖分析完毕后，<code>webpack</code>会根据每个模块每个导出是否被使用，标记其他导出为<code>dead code</code>，然后交给代码压缩工具处理</p>
+</li>
+<li><p>代码压缩工具最终移除掉那些<code>dead code</code>代码</p>
+</li>
+</ol>
+<h2 id="五、使用第三方库"><a href="#五、使用第三方库" class="headerlink" title="五、使用第三方库"></a>五、使用第三方库</h2><ol>
+<li><p>某些第三方库可能使用的是<code>commonjs</code>的方式导出，比如<code>lodash</code>，又或者没有提供普通的ES6方式导出，对于这些库，<code>tree shaking</code>是无法发挥作用的</p>
+</li>
+<li><p>因此要寻找这些库的<code>es6</code>版本，好在很多流行但没有使用的<code>ES6</code>的第三方库，都发布了它的<code>ES6</code>版本，比如<code>lodash-es</code></p>
+</li>
+</ol>
+<h2 id="六、作用域分析"><a href="#六、作用域分析" class="headerlink" title="六、作用域分析"></a>六、作用域分析</h2><ol>
+<li><p><code>tree shaking</code>本身并没有完善的作用域分析，可能导致在一些<code>dead code</code>函数中的依赖仍然会被视为依赖</p>
+</li>
+<li><p>插件<code>webpack-deep-scope-plugin</code>提供了作用域分析，可解决这些问题</p>
+</li>
+</ol>
+<h2 id="七、副作用问题"><a href="#七、副作用问题" class="headerlink" title="七、副作用问题"></a>七、副作用问题</h2><ol>
+<li><p>webpack在<code>tree shaking</code>的使用，有一个原则：<strong>一定要保证代码正确运行</strong>，在满足该原则的基础上，再来决定如何<code>tree shaking</code></p>
+</li>
+<li><p>因此，当<code>webpack</code>无法确定某个模块是否有副作用时，它往往将其视为有副作用</p>
+</li>
+<li><p>因此，某些情况可能并不是我们所想要的</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//common.js</span></span><br><span class="line"><span class="keyword">var</span> n  = <span class="built_in">Math</span>.random();</span><br><span class="line"></span><br><span class="line"><span class="comment">//index.js</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;./common.js&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>虽然我们根本没用有<code>common.js</code>的导出，但<code>webpack</code>担心<code>common.js</code>有副作用，如果去掉会影响某些功能</p>
+</li>
+<li><p>如果要解决该问题，就需要标记该文件是没有副作用的，可以在<code>package.json</code>中加入<code>sideEffects</code></p>
+</li>
+</ol>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;sideEffects&quot;</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>有两种配置方式：</li>
+</ol>
+<ul>
+<li>false：当前工程中，所有模块都没有副作用。注意，这种写法会影响到某些css文件的导入</li>
+<li>数组：设置哪些文件拥有副作用，例如：<code>[&quot;!src/common.js&quot;]</code>，表示只要不是<code>src/common.js</code>的文件，都有副作用</li>
+</ul>
+<blockquote>
+<p>这种方式我们一般不处理，通常是一些第三方库在它们自己的<code>package.json</code>中标注</p>
+</blockquote>
+<h2 id="八、css-tree-shaking"><a href="#八、css-tree-shaking" class="headerlink" title="八、css tree shaking"></a>八、css tree shaking</h2><ol>
+<li><p><code>webpack</code>无法对<code>css</code>完成<code>tree shaking</code>，因为<code>css</code>跟<code>es6</code>没有半毛钱关系，因此对<code>css</code>的<code>tree shaking</code>需要其他插件完成</p>
+</li>
+<li><p>例如：<code>purgecss-webpack-plugin</code></p>
+</li>
+<li><p>注意：<code>purgecss-webpack-plugin</code>对<code>css module</code>无能为力</p>
+</li>
+</ol>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:303459939@qq.com">Wu Hao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/01/31/webpack-tree-shaking/">http://example.com/2021/01/31/webpack-tree-shaking/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Wu Hao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/webpack-tree-shaking/">webpack-tree-shaking</a></div><div class="post_share"><div class="social-share" data-image="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/01/31/webpack-tree-%E6%87%92%E5%8A%A0%E8%BD%BD/"><img class="prev-cover" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">懒加载</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/31/webpack-%E4%BB%A3%E7%A0%81%E5%8E%8B%E7%BC%A9/"><img class="next-cover" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">代码压缩</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wu Hao's Blog</title><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta property="og:type" content="website">
+<meta property="og:title" content="Wu Hao&#39;s Blog">
+<meta property="og:url" content="http://example.com/page/31/index.html">
+<meta property="og:site_name" content="Wu Hao&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:author" content="Wu Hao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/page/31/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wu Hao","link":"链接: ","source":"来源: Wu Hao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: true,
+  isSidebar: false,
+  postUpdate: '2021-02-02 21:42:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">305</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">286</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/11/83968b7d177c636fbd78242efe45f275.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wu Hao's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/21/ES5-%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" title="数组方法">     <img class="post_bg" src="https://image.slidesharecdn.com/sayhellotoecmascript5-100408172906-phpapp01/95/say-hello-to-ecmascript-5-1-728.jpg?cb=1270887557" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数组方法"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/21/ES5-%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/" title="数组方法">数组方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-21T06:04:07.000Z" title="发表于 2020-09-21 14:04:07">2020-09-21</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-15T01:11:34.351Z" title="更新于 2020-11-15 09:11:34">2020-11-15</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/ES5/">ES5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Array/">Array</a></span></div><div class="content">一、7个改变原数组的方法
+reverse: 逆序
+sort: 按ASCII码升序
+
+//如果数组元素有多位数，用ASCII码比较不了，那么用下面这种方法sort(function(a, b) &#123;    return a - b;&#125;)A
+
+
+push: 在数组后面添加一个或多个值
+pop: 将数组最后一位剪切出来
+unshift: 在数组前面添加一个或多个值
+shift: 将数组第一位剪切出来
+splice: 剪切，一般用来添加值，splice(起始位置,长度,切口处添加新数据)
+
+//若起始位置为负，表示倒数var arr = [1, 2, 3, 4];splice = function(pos) &#123;    pos += pos &gt; 0 ? 0 : this.length;&#125;
+
+二、5个不改变原数组的方法
+slice: 截取，参数个数0-2个
+
+
+0个参数：全部截取，还可以将类数组转化成数组
+1个参数：起始位置
+2个参数：起始位置 终止位置
+
+
+concat: 拼接
+join: 连接，参数为字符串，将数组元素用字符串连接，输出字符串
+spl ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/20/%E7%BD%91%E7%BB%9C-%E4%BA%92%E8%81%94%E7%BD%91%E8%B5%B7%E6%BA%90/" title="互联网起源">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3966241382,4126363663&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="互联网起源"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/20/%E7%BD%91%E7%BB%9C-%E4%BA%92%E8%81%94%E7%BD%91%E8%B5%B7%E6%BA%90/" title="互联网起源">互联网起源</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-20T12:32:17.000Z" title="发表于 2020-09-20 20:32:17">2020-09-20</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-27T16:02:20.198Z" title="更新于 2020-11-28 00:02:20">2020-11-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C-%E4%BA%92%E8%81%94%E7%BD%91%E8%B5%B7%E6%BA%90/">网络-互联网起源</a></span></div><div class="content">一、互联网起源
+起源于1969年
+
+美国加利福尼亚洛杉矶分校、斯坦福大学、加利福尼亚大学、犹他州大学将学校内部用的网络连接起来，形成了互联网的雏形
+
+互联网（中国俗称） — Internet（音译：因特网，英特网） — 学名：网际网路
+
+1989年，欧洲粒子物理研究所提出了一种协议（协议就是一种格式），格式为www（全名：Word Wide Web，音译：万维网）
+
+1991年，互联网正式开始商用
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/13/HTML5-svg/" title="svg">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1605510400298&amp;di=6687976274b1d76a993713c2b146f8fe&amp;imgtype=0&amp;src=http%3A%2F%2Fimage.woshipm.com%2Fwp-files%2F2015%2F01%2Ff02680761dc73dbcb57a2c143c3d11f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="svg"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/13/HTML5-svg/" title="svg">svg</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-13T07:38:33.000Z" title="发表于 2020-09-13 15:38:33">2020-09-13</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-16T04:19:55.747Z" title="更新于 2020-11-16 12:19:55">2020-11-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML5/">HTML5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/svg/">svg</a></span></div><div class="content">
+本篇文章讲述了svg与canvas的区别，svg常用知识点
+
+一、svg与canvas的区别
+svg：矢量图，用HTML和CSS画
+canvas：非矢量图，JS画
+
+二、图形曲线线line&#123;    stroke:#f00;&#125;
+
+&lt;line x1=&quot;&quot; y1=&quot;&quot; x2=&quot;&quot; y2=&quot;&quot; /&gt;
+
+线条样式
+stroke-linecap：线段末端样式
+
+
+but
+square
+round
+
+
+stroke-linejoin：线段交汇处样式
+
+
+round
+miter(尖角)
+bevel(截取)
+
+矩形
+所有闭合图形都是默认填充并且画出来的(包括折线)
+
+//rx ry为x y方向的圆角&lt;rect x y width height rx ry/&gt;
+
+圆/椭圆/折线//x,y,r 圆心 半径&lt;circle x y r/&gt;
+
+//x,y,rx,ry 圆心 半径&lt;eclipse x y rx ry/&gt;
+
+&lt;polyline points=&qu ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/09/12/HTML5-canvas/" title="canvas">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1605510400298&amp;di=6687976274b1d76a993713c2b146f8fe&amp;imgtype=0&amp;src=http%3A%2F%2Fimage.woshipm.com%2Fwp-files%2F2015%2F01%2Ff02680761dc73dbcb57a2c143c3d11f5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="canvas"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/12/HTML5-canvas/" title="canvas">canvas</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-12T14:47:05.000Z" title="发表于 2020-09-12 22:47:05">2020-09-12</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-16T04:19:52.738Z" title="更新于 2020-11-16 12:19:52">2020-11-16</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/HTML5/">HTML5</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/canvas/">canvas</a></span></div><div class="content">
+本片文章讲述了canvas画布与画板的区别，以及canvas一些常用知识点
+
+一、canvas画布与画板宽高
+
+行间width，height设置的是画板和画布宽高
+
+css属性(包含style)设置的是画板宽高
+
+两者默认宽高都是300x150，如果画板变大，画布会被拉伸
+
+
+二、选中canvas并获取画笔var canvas = document.getElementById(&quot;&quot;);var ctx = canvas.getContext(&quot;2d&quot;);
+
+三、图形曲线线画线//一笔画线//加粗(作用在后面的所有线上)ctx.lineWidth = 10;//确定点ctx.moveTo(x1, y1);ctx.lineTo(x2, y2);ctx.lineTo(x3, y3);//画ctx.stroke();//一笔画下来的线可以自闭和ctx.closePath();//填充ctx.fill();//开启新路径画下条线ctx.beginPath();...
+
+贝塞尔曲线//二次贝塞尔曲线ctx.quadraticCurveTo(Ax, Ay,  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/09/12/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-JS-Students/" title="JS-Students">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=116826999,3260180186&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JS-Students"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/09/12/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-JS-Students/" title="JS-Students">JS-Students</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-09-12T09:12:35.000Z" title="发表于 2020-09-12 17:12:35">2020-09-12</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-02T08:29:49.771Z" title="更新于 2020-12-02 16:29:49">2020-12-02</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">项目报告</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-JS-JavaScript/">项目报告-JS-JavaScript</a></span></div><div class="content">效果展示学生列表
+新增学生
+修改学生信息
+删除学生
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/30/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wu Hao</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">305</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">286</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wuhao0509"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS2/"><span class="card-category-list-name">CSS2</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES5/"><span class="card-category-list-name">ES5</span><span class="card-category-list-count">48</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES6/"><span class="card-category-list-name">ES6</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML4/"><span class="card-category-list-name">HTML4</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML5/"><span class="card-category-list-name">HTML5</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/React/"><span class="card-category-list-name">React</span><span class="card-category-list-count">15</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TypeScript/"><span class="card-category-list-name">TypeScript</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">18</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jQuery/"><span class="card-category-list-name">jQuery</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/node/"><span class="card-category-list-name">node</span><span class="card-category-list-count">31</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/webpack/"><span class="card-category-list-name">webpack</span><span class="card-category-list-count">43</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">微信小程序</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">29</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8/"><span class="card-category-list-name">本地化存储</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/"><span class="card-category-list-name">模块化</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/"><span class="card-category-list-name">网络</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/"><span class="card-category-list-name">项目报告</span><span class="card-category-list-count">5</span></a></li>
+            
+            </ul></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">13</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">42</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">33</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">139</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">55</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">23</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">305</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-02-02T13:42:19.157Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = 'N'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>

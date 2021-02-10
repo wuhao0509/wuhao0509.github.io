@@ -75,7 +75,7 @@ var saveToLocal = {
   isHome: true,
   isHighlightShrink: true,
   isSidebar: false,
-  postUpdate: '2021-02-08 23:42:44'
+  postUpdate: '2021-02-10 13:48:07'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -137,116 +137,210 @@ var saveToLocal = {
     if (t === 'dark') activateDarkMode()
     else if (t === 'light') activateLightMode()
   }
-})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">324</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">318</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/11/83968b7d177c636fbd78242efe45f275.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wu Hao's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/22/webpack-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="配置文件">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="配置文件"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/22/webpack-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" title="配置文件">配置文件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-22T13:21:07.000Z" title="发表于 2021-01-22 21:21:07">2021-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-24T16:10:10.313Z" title="更新于 2021-01-25 00:10:10">2021-01-25</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">webpack-配置文件</a></span></div><div class="content">一、配置文件
-webpack提供的cli支持很多的参数，例如--mode，但更多的时候，我们会使用更加灵活的配置文件来控制webpack的行为
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">334</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">328</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/blogimg/picbed@master/2020/04/11/83968b7d177c636fbd78242efe45f275.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Wu Hao's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/26/webpack-%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2/" title="自动生成页面">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="自动生成页面"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/26/webpack-%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2/" title="自动生成页面">自动生成页面</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-26T09:56:28.000Z" title="发表于 2021-01-26 17:56:28">2021-01-26</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-29T14:28:51.627Z" title="更新于 2021-01-29 22:28:51">2021-01-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2/">webpack-自动生成页面</a></span></div><div class="content">一、问题
+我们要将打包之后的js代码显示到页面上需要在dist下面创建html文件，但是文件一旦src目录下的文件修改，我们就需要重新打包，如果我们用了clean-webpack-plugin，那么dist目录被清空，之前创建的html文件也会被清除，这样我们就需要在每次打包之后在dist目录下自动创建一个html文件
 
-默认情况下，webpack会读取webpack.config.js文件作为配置文件，但也可以通过CLI参数--config来指定某个配置文件
+二、原理
+利用fs模块生成一个页面文件
 
-配置文件中通过CommonJS模块导出一个对象，对象中的各种属性对应不同的webpack配置
+给文件内容的合适的位置添加一个script元素
 
-
-// webpack.config.jsmodule.exports = &#123;    entry: &quot;./src/main.js&quot;,    output: &#123;        filename: &quot;bundle.js&quot;    &#125;&#125;
-
-
-注意：配置文件中的代码，必须是有效的node代码
-
-当命令行参数与配置文件中的配置出现冲突时，以命令行参数为准。
+元素的src路径引用打包后的js
 
 
-二、基本配置
-mode：编译模式，字符串，取值为development或production，指定编译结果代码运行的环境，会影响webpack对编译结果代码格式的处理
+三、用法// 配置文件 webpack.config.jsconst &#123; CleanWebpackPlugin &#125; = require(&quot;clean-webpack-plugin&quot;)const HtmlWebpackPlugin = require(&#x27;html-webpack-plugin&#x27;)module.exports = &#123;    mode: &quot;development&quot;,    devtool: &quot;source-map&quot;,    ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/26/webpack-%E6%B8%85%E9%99%A4%E8%BE%93%E5%87%BA%E7%9B%AE%E5%BD%95/" title="清除输出目录">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="清除输出目录"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/26/webpack-%E6%B8%85%E9%99%A4%E8%BE%93%E5%87%BA%E7%9B%AE%E5%BD%95/" title="清除输出目录">清除输出目录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-26T09:54:57.000Z" title="发表于 2021-01-26 17:54:57">2021-01-26</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-30T09:10:19.235Z" title="更新于 2021-01-30 17:10:19">2021-01-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E6%B8%85%E9%99%A4%E8%BE%93%E5%87%BA%E7%9B%AE%E5%BD%95/">webpack-清除输出目录</a></span></div><div class="content">一、解决问题
+文件修改之后再打包，输出目录就会出现新的文件，但是之前输出的文件还存在，需要手动删除，clean-webpack-plugin就解决了这个问题，自动删除之前打包好的文件
 
-entry： ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/22/webpack-%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/" title="编译结果分析">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译结果分析"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/22/webpack-%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/" title="编译结果分析">编译结果分析</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-22T12:04:47.000Z" title="发表于 2021-01-22 20:04:47">2021-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-03T06:38:28.874Z" title="更新于 2021-02-03 14:38:28">2021-02-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E7%BC%96%E8%AF%91%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90/">webpack-编译结果分析</a></span></div><div class="content">一、自己写一个main.js1. 先将模块内容放到函数环境里modules=&#123;    // 该对象保存了所有模块，以及模块对应代码    &quot;./src/a.js&quot;:function(module,exports)&#123;        // 模块a.js代码        console.log(&quot;module a&quot;);        modules.exports = &#x27;a&#x27;;    &#125;,    &quot;./src/index.js&quot;:function(module,exports,require)&#123;        // 模块index.js代码        console.log(&quot;index module&quot;);        var a = require(&quot;./abc/a.js&quot;);        console.log(a)    &#125;&#125;
+二、用法// 配置文件webpack.config.jsvar &#123; CleanWebpackPlugin &#125; = require(&quot;clean-webpack-plugin&quot;)var path = require(&quot;path&quot;)module.exports = &#123;    mode: &quot;development&quot;,    devtool: &quot;source-map&quot;,    entry:&#123;        main:&quot;./src/index.js&quot;    &#125;,    output: &#123;        filename: &quot;[name].[chunkhash:5].js&quot;,        path: path.resolve(__dir ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/23/webpack-%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE%E7%BB%86%E8%8A%82/" title="其他细节配置">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="其他细节配置"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/23/webpack-%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE%E7%BB%86%E8%8A%82/" title="其他细节配置">其他细节配置</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:44:33.000Z" title="发表于 2021-01-23 09:44:33">2021-01-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-30T05:07:18.323Z" title="更新于 2021-01-30 13:07:18">2021-01-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E5%85%B6%E4%BB%96%E7%BB%86%E8%8A%82%E9%85%8D%E7%BD%AE/">webpack-其他细节配置</a></span></div><div class="content">
+只需要知道它是干什么的就行了，不需要知道原理
 
-2. 用立即执行函数来处理modules对象(function(mod ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/22/webpack-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%85%BC%E5%AE%B9%E6%80%A7/" title="模块化兼容性">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="模块化兼容性"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/22/webpack-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%85%BC%E5%AE%B9%E6%80%A7/" title="模块化兼容性">模块化兼容性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-22T12:04:46.000Z" title="发表于 2021-01-22 20:04:46">2021-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-22T13:19:13.850Z" title="更新于 2021-01-22 21:19:13">2021-01-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%85%BC%E5%AE%B9%E6%80%A7/">webpack-模块化兼容性</a></span></div><div class="content">
-由于webpack同时支持CommonJS和ES6 module，因此需要理解它们互操作时webpack是如何处理的
-
-一、同模块化标准
-如果导出和导入使用的是同一种模块化标准，打包后的效果和之前学习的模块化没有任何差异
+一、contextcontext: path.resolve(__dirname, &quot;app&quot;)
 
 
+该配置会影响入口和loaders的解析，入口和loaders的相对路径会以context的配置作为基准路径，这样，你的配置会独立于CWD（current working directory 当前执行路径）
 
-二、不同模块化标准
-不同的模块化标准，webpack按照如下的方式处理
+二、output2.1 library
+library: “abc”
 
 
+这样一来，打包后的结果中，会将自执行函数的执行结果暴露给全局变量abc 
+
+2.2 libraryTarget
+libraryTarget: “var”
+
+
+该配置可以更加精细的控制如何暴露入口包的导出结果
+
+其他可用的值有：
+
+
+
+var：默认值，暴露给一个普通变量
+window：暴露给window对象的一个属性
+this：暴露给this的一个属性
+global：暴露给global的一个属性
+commonjs：暴露给exports的一个属性
+其他：https://www.webpackjs.com/  configuration/outp ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/23/webpack-%E5%8C%BA%E5%88%86%E7%8E%AF%E5%A2%83/" title="区分环境">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="区分环境"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/23/webpack-%E5%8C%BA%E5%88%86%E7%8E%AF%E5%A2%83/" title="区分环境">区分环境</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:44:32.000Z" title="发表于 2021-01-23 09:44:32">2021-01-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-30T06:32:03.049Z" title="更新于 2021-01-30 14:32:03">2021-01-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E5%8C%BA%E5%88%86%E7%8E%AF%E5%A2%83/">webpack-区分环境</a></span></div><div class="content">一、区分环境
+有些时候，我们需要针对生产环境和开发环境分别书写webpack配置，为了更好的适应这种要求，webpack允许配置不仅可以是一个对象，还可以是一个函数    
+
+在开始构建时，webpack如果发现配置是一个函数，会调用该函数，将函数返回的对象作为配置内容，因此，开发者可以根据不同的环境返回不同的对象
+
+在调用webpack函数时，webpack会向函数传入一个参数env，该参数的值来自于webpack命令中给env指定的值，例如
+
+
+npx webpack --env abc # env: &quot;abc&quot;npx webpack --env.abc # env: &#123;abc:true&#125;npx webpack --env.abc=1  # env： &#123;abc:1&#125;npx webpack --env.abc=1 --env.bcd=2 # env: &#123;abc:1, bcd:2&#125;
+
+
+这样一来，我们就可以在命令中指定环境，在代码中进行判断，根据环境返回不同的配置结果。
+
+module.exports =  ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/23/webpack-plugin/" title="plugin">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="plugin"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/23/webpack-plugin/" title="plugin">plugin</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:43:34.000Z" title="发表于 2021-01-23 09:43:34">2021-01-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-28T10:53:47.628Z" title="更新于 2021-01-28 18:53:47">2021-01-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-plugin/">webpack-plugin</a></span></div><div class="content">一、什么事loader做不了
+loader的功能定位是转换代码，而一些其他的操作难以使用loader完成，比如：
+
+
+当webpack生成文件时，顺便多生成一个说明描述文件
+
+当webpack编译启动时，控制台输出一句话表示webpack启动了
+
+当xxxx时，xxxx就需要plugin
+
+
+二、plugin
+这种类似的功能需要把功能嵌入到webpack的编译流程中，而这种事情的实现是依托于plugin的，说白了就是注册事件的，下图中的红点就是事件的触发点
+
+
+
+plugin的本质是一个带有apply方法的对象
+
+var plugin = &#123;    apply: function(compiler)&#123;&#125;&#125;// 通常，习惯上，我们会将该对象写成构造函数的模式class MyPlugin&#123;    apply(compiler)&#123;&#125;&#125;var plugin = new MyPlugin();
+
+
+要将插件应用到webpack，需要把插件对象配置到webpack的plugins数组中
+
+module.exports  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/23/webpack-loader/" title="loader">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="loader"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/23/webpack-loader/" title="loader">loader</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:43:10.000Z" title="发表于 2021-01-23 09:43:10">2021-01-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-25T15:48:40.598Z" title="更新于 2021-01-25 23:48:40">2021-01-25</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-loader/">webpack-loader</a></span></div><div class="content">
+webpack做的事情，仅仅是分析出各种模块的依赖关系，然后形成资源列表，最终打包生成到指定的文件中，更多的功能需要借助webpack loaders和webpack plugins完成。
+
+一、loader
+webpack loader： loader本质上是一个函数，它的作用是将某个源码字符串转换成另一个源码字符串返回。
+
+
+
+loader函数的将在模块解析的过程中被调用，以得到最终的源码。
+
+loader是在node环境运行，只能用commonJS规范
+
+
+二、全流程
+三、chunk中解析模块的流程
+四、chunk中解析模块的更详细流程
+五、处理loaders流程
+六、loader配置6.1 完整配置
+用loader处理之后的代码交给抽象语法树分析
+
+module.exports = &#123;    //针对模块的配置，目前版本只有两个配置，rules、noParse（是否不要解析某个模块）    module: &#123;         //模块匹配规则，可以存在多个规则，每个规则是一个对象        rules: [             &#123;     ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/23/webpack-%E5%85%A5%E5%8F%A3%E5%87%BA%E5%8F%A3%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" title="入口出口最佳实践">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="入口出口最佳实践"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/23/webpack-%E5%85%A5%E5%8F%A3%E5%87%BA%E5%8F%A3%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" title="入口出口最佳实践">入口出口最佳实践</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-23T01:42:52.000Z" title="发表于 2021-01-23 09:42:52">2021-01-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-29T14:17:10.072Z" title="更新于 2021-01-29 22:17:10">2021-01-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E5%85%A5%E5%8F%A3%E5%87%BA%E5%8F%A3%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">webpack-入口出口最佳实践</a></span></div><div class="content">
+入口和出口的最佳实践，没有固定方法，只能具体情况具体分析
+
+一、一个页面一个JS
+
+源码结构
+
+|—— src    |—— pageA   页面A的代码目录        |—— index.js 页面A的启动模块        |—— ...    |—— pageB   页面B的代码目录        |—— index.js 页面B的启动模块        |—— ...    |—— pageC   页面C的代码目录        |—— main1.js 页面C的启动模块1 例如：主功能        |—— main2.js 页面C的启动模块2 例如：实现访问统计的额外功能        |—— ...    |—— common  公共代码目录        |—— ...
+
+
+webpack配置
+
+module.exports = &#123;    entry:&#123;        pageA: &quot;./src/pageA/index.js&quot;,        pageB: &quot;./src/pageB/index.js&quot;,  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/22/webpack-%E5%85%A5%E5%8F%A3%E5%92%8C%E5%87%BA%E5%8F%A3/" title="入口和出口">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="入口和出口"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/22/webpack-%E5%85%A5%E5%8F%A3%E5%92%8C%E5%87%BA%E5%8F%A3/" title="入口和出口">入口和出口</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-22T13:27:56.000Z" title="发表于 2021-01-22 21:27:56">2021-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-03T09:30:34.569Z" title="更新于 2021-02-03 17:30:34">2021-02-03</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E5%85%A5%E5%8F%A3%E5%92%8C%E5%87%BA%E5%8F%A3/">webpack-入口和出口</a></span></div><div class="content">
+
+node内置模块 - path: https://nodejs.org/dist/latest-v12.x/docs/api/path.html
+
+一、入口
+入口真正配置的是chunk
+
+入口通过entry进行配置
+
+
+二、出口
+这里的出口是针对资源列表(chunk assets)的文件名或路径的配置
+
+出口通过output进行配置
+
+
+三、出口配置规则
+如果出口使用静态规则配置的，那么就会产生冲突问题，说白了就是多个chunk打包之后的文件的文件名是同一个，会报错
+
+
+当生成资源文件时，方括号内部内容会被对应内容替换
+
+
+[name]：被chunkname替换
+
+[hash]: 被总的资源hash替换
+
+
+
+这种方式通常用于解决浏览器缓存问题
+
+原因：html页面引入两个打包之后的文件a b，当浏览器打开html文件时，浏览器会对引入的js文件进行缓存，入口js文件修改之后重新打包，文件内容变了，但是文件名没变，浏览器加载时使用的还是之前缓存的js，这就出现的问题
+
+解决方法：为了解决这个问题，我们需要打包后的文件的文件名随着内容的改变而改变
+
+
+
+[chunkhash]: 被c ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/22/webpack-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" title="编译过程">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="编译过程"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/22/webpack-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" title="编译过程">编译过程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-22T13:26:33.000Z" title="发表于 2021-01-22 21:26:33">2021-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-30T01:26:53.148Z" title="更新于 2021-01-30 09:26:53">2021-01-30</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/">webpack-编译过程</a></span></div><div class="content">一、webpack编译过程
+webpack 的作用是将源代码编译（构建、打包）成最终代码，整个过程大致分为三个步骤，既初始化、编译、输出
+
+
+
+二、初始化
+此阶段，webpack会将CLI参数、配置文件、默认配置进行融合，形成一个最终的配置对象。
+
+对配置的处理过程是依托一个第三方库yargs完成的
+
+此阶段相对比较简单，主要是为接下来的编译阶段做必要的准备，目前，可以简单的理解为，初始化阶段主要用于产生一个最终的配置
+
+
+三、编译3.1 创建chunk
+chunk是webpack在内部构建过程中的一个概念，译为块，它表示通过某个入口找到的所有依赖的统称，根据入口模块（默认为./src/index.js）创建一个chunk
+
+
+
+每个chunk都有至少两个属性
+
+
+name：默认为main，chunk有名字就代表可能同时存在多个chunk
+
+id：唯一编号，开发环境和name相同，生产环境是一个数字，从0开始
+
+
+3.2 构建所有依赖模块
+
+AST 树形结构遍历，找到所有依赖
+
+
+AST在线测试工具：https://astexplorer.net/
+
+
+记录依赖的完整路径保存到depe ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/22/webpack-devtool%E9%85%8D%E7%BD%AE/" title="devtool配置-source map">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="devtool配置-source map"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/22/webpack-devtool%E9%85%8D%E7%BD%AE/" title="devtool配置-source map">devtool配置-source map</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-22T13:24:53.000Z" title="发表于 2021-01-22 21:24:53">2021-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-29T13:54:12.956Z" title="更新于 2021-01-29 21:54:12">2021-01-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-devtool%E9%85%8D%E7%BD%AE/">webpack-devtool配置</a></span></div><div class="content">
+本小节的知识与 webpack 无关jquery压缩后的代码：https://code.jquery.com/jquery-3.4.1.min.js
+
+一、源码地图介绍 source map
+前端发展到现阶段，很多时候都不会直接运行源代码，可能需要对源代码进行合并、压缩、转换等操作，真正运行的是转换后的代码
+
+
+
+这就给调试带来了困难，因为当运行发生错误的时候，我们更加希望能看到源代码中的错误，而不是转换后代码的错误，为了解决这一问题，chrome浏览器率先支持了source map，其他浏览器纷纷效仿，目前，几乎所有新版浏览器都支持了source map
+
+source map实际上是一个配置，配置中不仅记录了所有源码内容，还记录了和转换后的代码的对应关系
+
+
+二、浏览器处理source map的原理
 
 三、最佳实践
-代码编写最忌讳的是精神分裂，选择一个合适的模块化标准，然后贯彻整个开发阶段。
+source map 应在开发环境中使用，作为一种调试手段，source map 不应该在生产环境中使用
 
-</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/22/webpack-%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/" title="webpack安装和使用">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="webpack安装和使用"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/22/webpack-%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/" title="webpack安装和使用">webpack安装和使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-22T12:01:40.000Z" title="发表于 2021-01-22 20:01:40">2021-01-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-24T11:50:39.266Z" title="更新于 2021-01-24 19:50:39">2021-01-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/">webpack-安装和使用</a></span></div><div class="content">
-webpack官网：https://www.webpackjs.com/目前的最新版本：webpack4
-
-一、webpack简介
-webpack是基于模块化的打包（构建）工具，它把一切视为模块
-
-它通过一个开发时态的入口模块为起点(通常是一个JS文件)，分析出所有的依赖关系，然后经过一系列的过压缩、合并，最终生成运行时态的文件。
-
-
-二、webpack的特点
-为前端工程化而生：webpack致力于解决前端工程化，特别是浏览器端工程化中遇到的问题，让开发者集中注意力编写业务代码，而把工程化过程中的问题全部交给webpack来处理
-
-简单易用：支持零配置，可以不用写任何一行额外的代码就使用webpack
-
-强大的生态：webpack是非常灵活、可以扩展的，webpack本身的功能并不多，但它提供了一些可以扩展其功能的机制，使得一些第三方库可以融于到webpack中
-
-基于nodejs：由于webpack在构建的过程中需要读取文件，因此它是运行在node环境中的
-
-基于模块化：webpack在构建过程中要分析依赖关系，方式是通过模块化导入语句进行分析的，它支持各种模块化标准，包括但不限于 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/01/21/webpack-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%A8%A1%E5%9D%97%E5%8C%96/" title="浏览器端实现模块化存在的问题">     <img class="post_bg" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1033260650,3556090031&amp;fm=15&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="浏览器端实现模块化存在的问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/21/webpack-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%A8%A1%E5%9D%97%E5%8C%96/" title="浏览器端实现模块化存在的问题">浏览器端实现模块化存在的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-21T02:32:48.000Z" title="发表于 2021-01-21 10:32:48">2021-01-21</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-29T04:03:06.267Z" title="更新于 2021-01-29 12:03:06">2021-01-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/webpack/">webpack</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/webpack-%E5%A6%82%E4%BD%95%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E5%AE%9E%E7%8E%B0%E6%A8%A1%E5%9D%97%E5%8C%96/">webpack-如何在浏览器端实现模块化</a></span></div><div class="content">一、浏览器端的模块化
-问题：
-
-
-效率问题：精细的模块划分带来了更多的JS文件，更多的JS文件带来了更多的请求，降低了页面访问效率
-
-兼容性问题：浏览器目前仅支持ES6的模块化标准，并且还存在兼容性问题
-
-工具问题：浏览器不支持npm下载的第三方包
-
-
-
-工程问题：
-
-
-这些仅仅是前端工程化的一个缩影，当开发一个具有规模的程序，你将遇到非常多的非业务问题，这些问题包括：执行效率、兼容性、代码的可维护性可扩展性、团队协作、测试等等等等，我们将这些问题称之为工程问题，工程问题与业务无关，但它深刻的影响开发进度
-
-二、产生工程性问题的根本原因
-根本原因：在浏览器端，开发时态（devtime）和运行时态（runtime）的侧重点不一样
-
-开发时态（devtime）
-
-
-
-模块划分越细越好
-
-支持多种模块化标准
-
-支持npm或其他包管理器下载的模块
-
-能够解决其他工程化的问题
-
-
-
-运行时态（runtime）
-
-
-文件越少越好
-
-文件体积越小越好
-
-代码内容越乱越好
-
-所有浏览器都要兼容
-
-能够解决其他运行时的问题，主要是执行效率问题
-
-
-
-这种差异在小项目中表现的并不明显，可是一旦项目形成规模 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/01/17/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-jQuery-Code/" title="jQuery-Code">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=116826999,3260180186&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jQuery-Code"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/17/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-jQuery-Code/" title="jQuery-Code">jQuery-Code</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-17T09:10:02.000Z" title="发表于 2021-01-17 17:10:02">2021-01-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-17T09:41:19.919Z" title="更新于 2021-01-17 17:41:19">2021-01-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">项目报告</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-jQuery-Code/">项目报告-jQuery-Code</a></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/24/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-jQuery-JingDong/" title="jQuery-JingDong">     <img class="post_bg" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=116826999,3260180186&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jQuery-JingDong"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/24/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-jQuery-JingDong/" title="jQuery-JingDong">jQuery-JingDong</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-24T02:24:54.000Z" title="发表于 2020-12-24 10:24:54">2020-12-24</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-17T09:08:52.729Z" title="更新于 2021-01-17 17:08:52">2021-01-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/">项目报告</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A-jQuery-JingDong/">项目报告-jQuery-JingDong</a></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/21/node-%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/" title="node-日志记录">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="node-日志记录"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/21/node-%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/" title="node-日志记录">node-日志记录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-21T13:39:27.000Z" title="发表于 2020-12-21 21:39:27">2020-12-21</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-21T13:39:27.655Z" title="更新于 2020-12-21 21:39:27">2020-12-21</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/21/node-%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81/" title="数据验证">     <img class="post_bg" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1465946786,1990524304&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据验证"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/21/node-%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81/" title="数据验证">数据验证</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-21T13:38:52.000Z" title="发表于 2020-12-21 21:38:52">2020-12-21</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-21T13:40:31.995Z" title="更新于 2020-12-21 21:40:31">2020-12-21</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/node/">node</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/node-%E6%95%B0%E6%8D%AE%E9%AA%8C%E8%AF%81/">node-数据验证</a></span></div><div class="content">
-</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/20/node-moment/" title="moment">     <img class="post_bg" src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1465946786,1990524304&amp;fm=26&amp;gp=0.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="moment"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/20/node-moment/" title="moment">moment</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-20T14:25:36.000Z" title="发表于 2020-12-20 22:25:36">2020-12-20</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-20T14:42:53.390Z" title="更新于 2020-12-20 22:42:53">2020-12-20</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/node/">node</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/node-moment/">node-moment</a></span></div><div class="content">
-</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/7/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/9/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wu Hao</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">324</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">318</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wuhao0509"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS2/"><span class="card-category-list-name">CSS2</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES5/"><span class="card-category-list-name">ES5</span><span class="card-category-list-count">48</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES6/"><span class="card-category-list-name">ES6</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML4/"><span class="card-category-list-name">HTML4</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML5/"><span class="card-category-list-name">HTML5</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/React/"><span class="card-category-list-name">React</span><span class="card-category-list-count">15</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TypeScript/"><span class="card-category-list-name">TypeScript</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">48</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jQuery/"><span class="card-category-list-name">jQuery</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/node/"><span class="card-category-list-name">node</span><span class="card-category-list-count">31</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/webpack/"><span class="card-category-list-name">webpack</span><span class="card-category-list-count">44</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">微信小程序</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">29</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8/"><span class="card-category-list-name">本地化存储</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/"><span class="card-category-list-name">模块化</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/"><span class="card-category-list-name">网络</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/"><span class="card-category-list-name">项目报告</span><span class="card-category-list-count">5</span></a></li>
+source map的文件一般较大，不仅会导致额外的网络传输，还容易暴露原始代码。即便要在生产环境中使用source map，用于调试真实的代码运行问题，也要做 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/7/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="extend next" rel="next" href="/page/9/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Wu Hao</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">334</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">328</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">17</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wuhao0509"><i class="fab fa-github"></i><span>Github主页</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:303459939@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/CSS2/"><span class="card-category-list-name">CSS2</span><span class="card-category-list-count">24</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES5/"><span class="card-category-list-name">ES5</span><span class="card-category-list-count">48</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/ES6/"><span class="card-category-list-name">ES6</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML4/"><span class="card-category-list-name">HTML4</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/HTML5/"><span class="card-category-list-name">HTML5</span><span class="card-category-list-count">6</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/React/"><span class="card-category-list-name">React</span><span class="card-category-list-count">15</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/TypeScript/"><span class="card-category-list-name">TypeScript</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">58</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jQuery/"><span class="card-category-list-name">jQuery</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/node/"><span class="card-category-list-name">node</span><span class="card-category-list-count">31</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/webpack/"><span class="card-category-list-name">webpack</span><span class="card-category-list-count">44</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">微信小程序</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><span class="card-category-list-name">数据结构</span><span class="card-category-list-count">29</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%9C%AC%E5%9C%B0%E5%8C%96%E5%AD%98%E5%82%A8/"><span class="card-category-list-name">本地化存储</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%A8%A1%E5%9D%97%E5%8C%96/"><span class="card-category-list-name">模块化</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/"><span class="card-category-list-name">网络</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%A1%B9%E7%9B%AE%E6%8A%A5%E5%91%8A/"><span class="card-category-list-name">项目报告</span><span class="card-category-list-count">5</span></a></li>
             
-            </ul></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">34</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">42</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">33</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">137</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">55</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">23</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">324</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-02-08T15:42:42.842Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+            </ul></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/02/"><span class="card-archive-list-date">二月 2021</span><span class="card-archive-list-count">44</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">42</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">33</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">137</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">55</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">23</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">334</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-02-10T05:48:06.328Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")

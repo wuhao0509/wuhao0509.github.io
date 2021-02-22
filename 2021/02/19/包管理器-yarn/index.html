@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>yarn | Wu Hao's Blog</title><meta name="keywords" content="包管理器-yarn"><meta name="author" content="Wu Hao,303459939@qq.com"><meta name="copyright" content="Wu Hao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="yarn 官网：https:&#x2F;&#x2F;www.yarnpkg.com&#x2F;zh-Hans&#x2F;  一、yarn简介 yarn 是由Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具，它仍然使用 npm 的registry，不过提供了全新 CLI 来对包进行管理  过去，yarn 的出现极大的抢夺了 npm 的市场，甚至有人戏言，npm 只剩下一个 regis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="yarn">
+<meta property="og:url" content="http://example.com/2021/02/19/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-yarn/index.html">
+<meta property="og:site_name" content="Wu Hao&#39;s Blog">
+<meta property="og:description" content="yarn 官网：https:&#x2F;&#x2F;www.yarnpkg.com&#x2F;zh-Hans&#x2F;  一、yarn简介 yarn 是由Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具，它仍然使用 npm 的registry，不过提供了全新 CLI 来对包进行管理  过去，yarn 的出现极大的抢夺了 npm 的市场，甚至有人戏言，npm 只剩下一个 regis">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2928281105,931678635&fm=26&gp=0.jpg">
+<meta property="article:published_time" content="2021-02-19T03:30:13.000Z">
+<meta property="article:modified_time" content="2021-02-19T10:42:03.053Z">
+<meta property="article:author" content="Wu Hao">
+<meta property="article:tag" content="包管理器-yarn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2928281105,931678635&fm=26&gp=0.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://example.com/2021/02/19/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-yarn/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wu Hao","link":"链接: ","source":"来源: Wu Hao's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isSidebar: true,
+  postUpdate: '2021-02-19 18:42:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">344</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">338</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81yarn%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">一、yarn简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%BF%87%E5%8E%BBnpm%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">二、过去npm存在的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81yarn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">3.</span> <span class="toc-text">三、yarn解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81yarn%E5%81%9A%E5%87%BA%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">四、yarn做出的优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%8E%B0%E5%9C%A8%E7%9A%84npm"><span class="toc-number">5.</span> <span class="toc-text">五、现在的npm</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">六、总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81yarn-%E7%9A%84%E6%A0%B8%E5%BF%83%E5%91%BD%E4%BB%A4"><span class="toc-number">7.</span> <span class="toc-text">七、yarn 的核心命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81yarn-%E7%9A%84%E7%89%B9%E5%88%AB%E7%A4%BC%E7%89%A9"><span class="toc-number">8.</span> <span class="toc-text">八、yarn 的特别礼物</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2928281105,931678635&amp;fm=26&amp;gp=0.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Wu Hao's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">yarn</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-19T03:30:13.000Z" title="发表于 2021-02-19 11:30:13">2021-02-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-19T10:42:03.053Z" title="更新于 2021-02-19 18:42:03">2021-02-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/">包管理器</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><blockquote>
+<p>yarn 官网：<a target="_blank" rel="noopener" href="https://www.yarnpkg.com/zh-Hans/">https://www.yarnpkg.com/zh-Hans/</a></p>
+</blockquote>
+<h2 id="一、yarn简介"><a href="#一、yarn简介" class="headerlink" title="一、yarn简介"></a>一、yarn简介</h2><ol>
+<li><p>yarn 是由Facebook、Google、Exponent 和 Tilde 联合推出了一个新的 JS 包管理工具，<strong>它仍然使用 npm 的registry</strong>，不过提供了全新 CLI 来对包进行管理</p>
+</li>
+<li><p>过去，yarn 的出现极大的抢夺了 npm 的市场，甚至有人戏言，npm 只剩下一个 registry 了。</p>
+</li>
+</ol>
+<h2 id="二、过去npm存在的问题"><a href="#二、过去npm存在的问题" class="headerlink" title="二、过去npm存在的问题"></a>二、过去npm存在的问题</h2><ol>
+<li><p>依赖目录嵌套层次深：过去，npm 的依赖是嵌套的，这在 windows 系统上是一个极大的问题，由于众所周知的原因，windows 系统无法支持太深的目录</p>
+</li>
+<li><p>下载速度慢</p>
+</li>
+</ol>
+<ul>
+<li><p>由于嵌套层次的问题，所以npm对包的下载只能是串行的，即前一个包下载完后才会下载下一个包，导致带宽资源没有完全利用</p>
+</li>
+<li><p>多个相同版本的包被重复的下载</p>
+</li>
+</ul>
+<ol start="3">
+<li><p>控制台输出繁杂：过去，npm 安装包的时候，每安装一个依赖，就会输出依赖的详细信息，导致一次安装有大量的信息输出到控制台，遇到错误极难查看</p>
+</li>
+<li><p>工程移植问题：由于 npm 的版本依赖可以是模糊的，可能会导致工程移植后，依赖的确切版本不一致。</p>
+</li>
+</ol>
+<h2 id="三、yarn解决方案"><a href="#三、yarn解决方案" class="headerlink" title="三、yarn解决方案"></a>三、yarn解决方案</h2><ol>
+<li><p>使用扁平的目录结构</p>
+</li>
+<li><p>并行下载</p>
+</li>
+<li><p>使用本地缓存</p>
+</li>
+<li><p>控制台仅输出关键信息</p>
+</li>
+<li><p>使用yanr-lock文件记录确切依赖</p>
+</li>
+</ol>
+<h2 id="四、yarn做出的优化"><a href="#四、yarn做出的优化" class="headerlink" title="四、yarn做出的优化"></a>四、yarn做出的优化</h2><ol>
+<li><p>增加了某些功能强大的命令</p>
+</li>
+<li><p>让既有的命令更加语义化</p>
+</li>
+<li><p>本地安装的CLI工具可以使用 yarn 直接启动</p>
+</li>
+<li><p>将全局安装的目录当作一个普通的工程，生成package.json文件，便于全局安装移植</p>
+</li>
+</ol>
+<h2 id="五、现在的npm"><a href="#五、现在的npm" class="headerlink" title="五、现在的npm"></a>五、现在的npm</h2><blockquote>
+<p>yarn 的出现给 npm 带来了巨大的压力，很快，npm 学习了 yarn 先进的理念，不断的对自身进行优化，到了目前的npm6版本，几乎完全解决了上面的问题：</p>
+</blockquote>
+<ol>
+<li><p>目录扁平化</p>
+</li>
+<li><p>并行下载</p>
+</li>
+<li><p>本地缓存</p>
+</li>
+<li><p>使用package-lock记录确切依赖</p>
+</li>
+<li><p>增加了大量的命令别名</p>
+</li>
+<li><p>内置了npx，可以启动本地的CLI工具</p>
+</li>
+<li><p>极大的简化了控制台输出</p>
+</li>
+</ol>
+<h2 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h2><ol>
+<li>npm6 之后，可以说npm已经和yarn非常接近，甚至没有差距了。很多新的项目，又重新从yarn转回到npm，这两个包管理器是目前的主流，都必须要学习。</li>
+</ol>
+<h2 id="七、yarn-的核心命令"><a href="#七、yarn-的核心命令" class="headerlink" title="七、yarn 的核心命令"></a>七、yarn 的核心命令</h2><ol>
+<li><p><strong>初始化</strong>：<code>yarn init [--yes/-y]</code></p>
+</li>
+<li><p><strong>安装</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>添加指定包：<code>yarn [global] add package-name [--dev/-D] [--exact/-E]</code></p>
+</li>
+<li><p>安装package.json中的所有依赖：<code>yarn install [--production/--prod]</code></p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>脚本和本地CLI</strong></li>
+</ol>
+<ul>
+<li><p>运行脚本：<code>yarn run 脚本名</code>，start、stop、test可以省略run</p>
+</li>
+<li><p>运行本地安装的CLI：<code>yarn run CLI名</code></p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>查询</strong></li>
+</ol>
+<ul>
+<li><p>查看bin目录：<code>yarn [global] bin</code></p>
+</li>
+<li><p>查询包信息：<code>yarn info 包名 [子字段]</code></p>
+</li>
+<li><p>列举已安装的依赖：<code>yarn [global] list [--depth=依赖深度]</code></p>
+</li>
+</ul>
+<blockquote>
+<p>yarn的list命令和npm的list不同，yarn输出的信息更加丰富，包括顶级目录结构、每个包的依赖版本号</p>
+</blockquote>
+<ol start="5">
+<li><strong>更新</strong></li>
+</ol>
+<ul>
+<li><p>列举需要更新的包：<code>yarn outdated</code></p>
+</li>
+<li><p>更新包：<code>yarn [global] upgrade [包名]</code></p>
+</li>
+</ul>
+<ol start="6">
+<li><strong>卸载</strong></li>
+</ol>
+<ul>
+<li>卸载包：<code>yarn remove 包名</code></li>
+</ul>
+<h2 id="八、yarn-的特别礼物"><a href="#八、yarn-的特别礼物" class="headerlink" title="八、yarn 的特别礼物"></a>八、yarn 的特别礼物</h2><blockquote>
+<p>在终端命令上，yarn不仅仅是对npm的命令做了一个改名，还增加了一些原本没有的命令，这些命令在某些时候使用起来非常方便</p>
+</blockquote>
+<ol>
+<li><p><strong>yarn check</strong>：使用<code>yarn check</code>命令，可以验证package.json文件的依赖记录和lock文件是否一致，这对于防止篡改非常有用</p>
+</li>
+<li><p><strong>yarn audit</strong>：使用<code>yarn audit</code>命令，可以检查本地安装的包有哪些已知漏洞，以表格的形式列出，漏洞级别分为以下几种：</p>
+</li>
+</ol>
+<ul>
+<li>INFO：信息级别</li>
+<li>LOW: 低级别</li>
+<li>MODERATE：中级别</li>
+<li>HIGH：高级别</li>
+<li>CRITICAL：关键级别</li>
+</ul>
+<ol start="3">
+<li><p><strong>yarn why</strong>：使用<code>yarn why 包名</code>命令，可以在控制台打印出为什么安装了这个包，哪些包会用到它</p>
+</li>
+<li><p><strong>yarn create</strong>：非常有趣的命令，今后，我们会学习一些脚手架，所谓脚手架，就是使用一个命令来搭建一个工程结构，过去，我们都是使用如下的做法：全局安装脚手架工具、使用全局命令搭建脚手架</p>
+</li>
+</ol>
+<ul>
+<li><p>由于大部分脚手架工具都是以<code>create-xxx</code>的方式命名的，比如react的官方脚手架名称为<code>create-react-app</code>，因此，可以使用<code>yarn create</code>命令来一步完成安装和搭建</p>
+</li>
+<li><p>例如：</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yarn create react-app my-app</span><br><span class="line"><span class="meta">#</span><span class="bash"> 等同于下面的两条命令</span></span><br><span class="line">yarn global add create-react-app</span><br><span class="line">create-react-app my-app</span><br></pre></td></tr></table></figure>
+
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:303459939@qq.com">Wu Hao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/02/19/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-yarn/">http://example.com/2021/02/19/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-yarn/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Wu Hao's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-yarn/">包管理器-yarn</a></div><div class="post_share"><div class="social-share" data-image="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2928281105,931678635&amp;fm=26&amp;gp=0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/02/19/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-%E5%85%B6%E4%BB%96%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/"><img class="prev-cover" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2928281105,931678635&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">其他包管理器</div></div></a></div><div class="next-post pull-right"><a href="/2021/02/19/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8-npm/"><img class="next-cover" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2928281105,931678635&amp;fm=26&amp;gp=0.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">npm</div></div></a></div></nav></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Wu Hao</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a target="_blank" rel="noopener" href="https://jerryc.me/">blog</a>!</div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
